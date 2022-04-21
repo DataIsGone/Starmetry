@@ -9,11 +9,8 @@ public class WordProblemGenerator : MonoBehaviour
     public string option2;
 
     public List<string> createProblem() {
-        // List<decimal> problemPieces = new List<decimal>();
-        // problemPieces.Add(answer);
-        // return problemPieces;
-
         List<string> answerOptions = new List<string>();
         answerOptions.Add(answer);
+        return answerOptions;
     }
 }
