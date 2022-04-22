@@ -8,30 +8,11 @@ public class AskMe : MonoBehaviour
     const string ENV_NAME = "GroundTest";
     int ignoreRaycast;
     int defaultLayer;
-    //GameObject env;
 
-    // public GameObject refUI;
-
-    // void Start() {
-    //     disableRefMenu();
-    // }
-
-    // public void activateRefMenu() {
-    //     refUI.SetActive(true);
-    // }
-
-    // public void disableRefMenu() {
-    //     refUI.SetActive(false);
-    // }
-
-    //void Awake() {
-        //env = GameObject.Find(ENV_NAME);
-        // ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
-        // defaultLayer = LayerMask.NameToLayer("Default");
-    //}
+    public GameObject env;
+    public GameObject refUI;
 
     void Start() {
-        //toggleMovementOff();
         ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
         defaultLayer = LayerMask.NameToLayer("Default");
     }
@@ -43,4 +24,10 @@ public class AskMe : MonoBehaviour
     public void toggleMovementOn(GameObject env) {
         env.layer = defaultLayer;
     }
+
+    public void stopAsking(GameObject env) {
+        refUI.SetActive(false);
+        toggleMovementOn(env);
+    }
+
 }

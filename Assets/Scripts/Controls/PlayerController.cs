@@ -30,17 +30,15 @@ public class PlayerController: MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitPoint;
+            
             // Make target marker appear again after clicking
             targetDest.SetActive(true);
 
             // && checkIfClickable(hitPoint)
             if (Physics.Raycast(ray, out hitPoint)) {
-
                 // check for click on sidekick
                 if (hitPoint.collider.gameObject.tag == "Sidekick") {
-                    // turn off click functionality
                     sidekick.toggleMovementOff(env);
-                    // turn on Reference UI
                     refUI.SetActive(true);
                 } else {
                     targetDest.transform.position = hitPoint.point;
@@ -57,14 +55,14 @@ public class PlayerController: MonoBehaviour
     }
 
     // REMOVE
-    private bool checkIfClickable(RaycastHit hitPoint) {
-        if (hitPoint.collider.gameObject.tag == "Unclickable") {
-            return false;
-        }
-        if (hitPoint.collider.gameObject.tag == "Player") {
-            return false;
-        }
-        return true;
-    }
+    // private bool checkIfClickable(RaycastHit hitPoint) {
+    //     if (hitPoint.collider.gameObject.tag == "Unclickable") {
+    //         return false;
+    //     }
+    //     if (hitPoint.collider.gameObject.tag == "Player") {
+    //         return false;
+    //     }
+    //     return true;
+    // }
 
 }
