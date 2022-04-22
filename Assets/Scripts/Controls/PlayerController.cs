@@ -11,7 +11,20 @@ public class PlayerController: MonoBehaviour
     // public Animator playerAnimator;
     public GameObject targetDest;
 
-    // Update is called once per frame
+    public GameObject refUI;
+
+    public GameObject env;
+
+    public AskMe sidekick;
+
+    void Awake() {
+        refUI.SetActive(false);
+    }
+
+    void Start() {
+        gameObject.AddComponent<AskMe>();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
@@ -20,9 +33,19 @@ public class PlayerController: MonoBehaviour
             // Make target marker appear again after clicking
             targetDest.SetActive(true);
 
-            if (Physics.Raycast(ray, out hitPoint) && checkIfClickable(hitPoint)) {
-                targetDest.transform.position = hitPoint.point;
-                player.SetDestination(hitPoint.point);
+            // && checkIfClickable(hitPoint)
+            if (Physics.Raycast(ray, out hitPoint)) {
+
+                // check for click on sidekick
+                if (hitPoint.collider.gameObject.tag == "Sidekick") {
+                    // turn off click functionality
+                    sidekick.toggleMovementOff(env);
+                    // turn on Reference UI
+                    refUI.SetActive(true);
+                } else {
+                    targetDest.transform.position = hitPoint.point;
+                    player.SetDestination(hitPoint.point);
+                }
             }
         }
 
@@ -33,7 +56,8 @@ public class PlayerController: MonoBehaviour
         // }
     }
 
-    bool checkIfClickable(RaycastHit hitPoint) {
+    // REMOVE
+    private bool checkIfClickable(RaycastHit hitPoint) {
         if (hitPoint.collider.gameObject.tag == "Unclickable") {
             return false;
         }
@@ -42,4 +66,5 @@ public class PlayerController: MonoBehaviour
         }
         return true;
     }
+
 }
