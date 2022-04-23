@@ -17,6 +17,9 @@ public class PlayerController: MonoBehaviour
 
     public AskMe sidekick;
 
+    private Ray ray;
+    private RaycastHit hitPoint;
+
     void Awake() {
         refUI.SetActive(false);
     }
@@ -27,31 +30,55 @@ public class PlayerController: MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitPoint;
-            
-            // Make target marker appear again after clicking
-            targetDest.SetActive(true);
 
-            // && checkIfClickable(hitPoint)
-            if (Physics.Raycast(ray, out hitPoint)) {
-                // check for click on sidekick
-                if (hitPoint.collider.gameObject.tag == "Sidekick") {
-                    sidekick.toggleMovementOff(env);
-                    refUI.SetActive(true);
-                } else {
-                    targetDest.transform.position = hitPoint.point;
-                    player.SetDestination(hitPoint.point);
-                }
-            }
-        }
 
         // if (player.velocity != Vector3.zero) {
         //     playerAnimator.SetBool("isWalking", true);
         // } else {
         //     playerAnimator.SetBool("isWalking", false);
         // }
+        determineClick();
+    }
+
+    private void determineClick() {
+        if (Input.GetMouseButtonDown(0)) {
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+            
+            // Make target marker appear again after clicking
+            targetDest.SetActive(true);
+
+            // && checkIfClickable(hitPoint)
+            if (Physics.Raycast(ray, out hitPoint)) {
+                switch(hitPoint.collider.gameObject.tag) {
+                    case "Sidekick":
+                        toggleSidekick();
+                        break;
+                    case "Player":
+                        // do nothing
+                        break;
+                    default:
+                        moveCharacter();
+                        break;
+                }
+                // // check for click on sidekick
+                // if (hitPoint.collider.gameObject.tag == "Sidekick") {
+                //     sidekick.toggleMovementOff(env);
+                //     refUI.SetActive(true);
+                // } else {
+                //     moveCharacter();
+                // }
+            }
+        }
+    }
+
+    private void moveCharacter() {
+        targetDest.transform.position = hitPoint.point;
+        player.SetDestination(hitPoint.point);
+    }
+
+    private void toggleSidekick() {
+        sidekick.toggleMovementOff(env);
+        refUI.SetActive(true);
     }
 
     // REMOVE
