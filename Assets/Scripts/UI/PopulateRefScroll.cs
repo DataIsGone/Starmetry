@@ -15,10 +15,13 @@ public class PopulateRefScroll : JSONReader
 
     private List<GameObject> items;
 
-    void Start()
-    {
+    void Awake() {
         playerList = jsonData.readFromJSON();
         items = new List<GameObject>();
+    }
+    
+    void Start()
+    {
         formList();
     }
 
