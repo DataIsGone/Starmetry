@@ -1,0 +1,24 @@
+{
+    "refItems": [
+        {
+            "topic": "Topic 1",
+            "text": "Text for Topic 1"
+        },
+        {
+            "topic": "Topic 2",
+            "text": "Text for Topic 2"
+        },
+        {
+            "topic": "Topic 3",
+            "text": "Text for Topic 3"
+        },
+        {
+            "topic": "Topic 4",
+            "text": "Text for Topic 4"
+        },
+        {
+            "topic": "Topic 5",
+            "text": "Text for Topic 5"
+        }
+    ]
+}

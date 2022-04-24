@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8192927668906312356}
   - component: {fileID: 8192927668906312376}
   - component: {fileID: 8192927668906312377}
-  - component: {fileID: 8192927668906312378}
   - component: {fileID: 8192927668906312379}
   m_Layer: 5
   m_Name: Topic Holder
@@ -81,26 +80,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &8192927668906312378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192927668906312357}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d5a68a16a2d4124a816ecd6a8687b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textJSON: {fileID: 4900000, guid: 6ed8857ff130145d398a58a0de3a5dd0, type: 3}
-  myPlayerList:
-    player: []
-  itemTemplate: {fileID: 1444516704727828737, guid: c74888335104743bcb1ba1a3319d620d,
-    type: 3}
-  jsonData: {fileID: 0}
-  playerList:
-    player: []
 --- !u!222 &8192927668906312379
 CanvasRenderer:
   m_ObjectHideFlags: 0

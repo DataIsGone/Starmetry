@@ -8,22 +8,21 @@ public class JSONReader : MonoBehaviour
     public TextAsset textJSON;
 
     [System.Serializable]
-    public class Player {
-        public string name;
-        public int health;
-        public int mana;
+    public class RefItem {
+        public string topic;
+        public string text;
     }
 
     [System.Serializable]
-    public class PlayerList {
-        public Player[] player;
+    public class RefItemList {
+        public RefItem[] refItems;
     }
 
-    public PlayerList myPlayerList = new PlayerList();
+    public RefItemList thisRefList = new RefItemList();
 
-    public PlayerList readFromJSON() {
-        myPlayerList = JsonUtility.FromJson<PlayerList>(textJSON.text);
-        return myPlayerList;
+    public RefItemList readFromJSON() {
+        thisRefList = JsonUtility.FromJson<RefItemList>(textJSON.text);
+        return thisRefList;
     }
 
 }

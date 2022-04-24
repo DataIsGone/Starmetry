@@ -10,13 +10,11 @@ public class PopulateRefScroll : JSONReader
 
     [SerializeField]
     private JSONReader jsonData;
-    public PlayerList playerList;
-    //private JSONReader.Player player;
-
+    public RefItemList refItemList;
     private List<GameObject> items;
 
     void Awake() {
-        playerList = jsonData.readFromJSON();
+        refItemList = jsonData.readFromJSON();
         items = new List<GameObject>();
     }
     
@@ -40,18 +38,19 @@ public class PopulateRefScroll : JSONReader
     }
 
     private void fillList() {
-        foreach (Player player in playerList.player) {
+        foreach (RefItem refItem in refItemList.refItems) {
             GameObject item = Instantiate(itemTemplate) as GameObject;
             item.SetActive(true);
 
-            changeText(item, player.name);
+            changeText(item, refItem.topic);
 
             item.transform.SetParent(gameObject.transform, false);
         }
     }
 
-    private void changeText(GameObject item, string name) {
-        item.transform.GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = name;
+    protected void changeText(GameObject item, string newText) {
+        item.transform.GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = newText;
     }
+
 
 }

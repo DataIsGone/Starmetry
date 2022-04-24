@@ -74,16 +74,4 @@ public class PlayerController: MonoBehaviour
         sidekick.toggleMovementOff(env);
         refUI.SetActive(true);
     }
-
-    // REMOVE
-    // private bool checkIfClickable(RaycastHit hitPoint) {
-    //     if (hitPoint.collider.gameObject.tag == "Unclickable") {
-    //         return false;
-    //     }
-    //     if (hitPoint.collider.gameObject.tag == "Player") {
-    //         return false;
-    //     }
-    //     return true;
-    // }
-
 }
