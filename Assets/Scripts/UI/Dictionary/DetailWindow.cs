@@ -23,11 +23,9 @@ public class DetailWindow : MonoBehaviour
             // turn off detail window
 
     public void ActivateTopicWindow(int id) {
-        Debug.Log(id);
         RefTopicItem thisTopic = loader.items[id];
-        Debug.Log(thisTopic.topicName);
         ShowDetailWindow();
-        //FillWindow();
+        FillWindow(id);
     }
     
     private void ShowDetailWindow() {
@@ -35,8 +33,14 @@ public class DetailWindow : MonoBehaviour
         scroll.SetActive(false);
     }
 
-    private void FillWindow() {
+    private void FillWindow(int id) {
+        // Fill Title
+        GameObject topicTitle = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+        topicTitle.GetComponent<TMPro.TextMeshProUGUI>().text = loader.items[id].topicName;
 
+        // Fill Text
+        GameObject topicText = gameObject.transform.GetChild(0).GetChild(1).GetChild(0).gameObject;
+        topicText.GetComponent<TMPro.TextMeshProUGUI>().text = loader.items[id].topicText;
     }
 
     public void GoBack() {

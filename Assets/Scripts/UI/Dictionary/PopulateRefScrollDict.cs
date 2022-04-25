@@ -23,15 +23,13 @@ public class PopulateRefScrollDict : RefTopicLoader
     }
 
     private void FillList() {
-        int i = 0;
-        while (i < data.topicsUnlocked) {
-        //for (int i = 0; i < data.topicsUnlocked; ++i) {
+        for (int i = 0; i < data.topicsUnlocked; i++) {
+            int id = i;
             GameObject item = Instantiate(itemTemplate);
             item.SetActive(true);
+            item.GetComponent<Button>().onClick.AddListener(delegate{detailWindow.ActivateTopicWindow(id);});
             changeText(item, loader.items[i].topicName);
-            item.GetComponent<Button>().onClick.AddListener(delegate{detailWindow.ActivateTopicWindow(i);});
             item.transform.SetParent(gameObject.transform, false);
-            i++;
         }
     }
 
