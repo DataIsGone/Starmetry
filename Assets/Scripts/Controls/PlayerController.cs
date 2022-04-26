@@ -13,6 +13,9 @@ public class PlayerController: MonoBehaviour
 
     public GameObject refUI;
 
+    [SerializeField]
+    private GameObject refSystem;
+
     public GameObject env;
 
     public AskMe sidekick;
@@ -72,6 +75,18 @@ public class PlayerController: MonoBehaviour
 
     private void toggleSidekick() {
         sidekick.toggleMovementOff(env);
+
+        // determine UI
+        if (refSystem.activeSelf) {
+            DialogSize(1);
+        } else {
+            DialogSize(0);
+        }
         refUI.SetActive(true);
+    }
+
+    private void DialogSize(int option) {
+        // option + 1 due to Player Ref Bubble being the first child
+        refUI.transform.GetChild(option+1).gameObject.SetActive(true);
     }
 }

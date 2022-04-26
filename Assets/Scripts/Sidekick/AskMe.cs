@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class AskMe : MonoBehaviour
 {
-
-    const string ENV_NAME = "GroundTest";
     int ignoreRaycast;
     int defaultLayer;
 
     public GameObject env;
     public GameObject refUI;
     public GameObject scroll;
+
+    [SerializeField]
+    private GameObject refDialogue;
+
+    [SerializeField]
+    private GameObject refDialogueSm;
 
     void Start() {
         ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
@@ -32,10 +36,14 @@ public class AskMe : MonoBehaviour
     }
 
     public void openScrollWindow() {
+        refDialogue.SetActive(false);
+        refDialogueSm.SetActive(true);
         scroll.SetActive(true);
     }
 
     public void closeScrollWindow() {
+        refDialogueSm.SetActive(false);
+        refDialogue.SetActive(true);
         scroll.SetActive(false);
     }
 
