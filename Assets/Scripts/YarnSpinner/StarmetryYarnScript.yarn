@@ -1,13 +1,32 @@
 ﻿title: Start
 tags:
+position: -93,-48
 ---
+<<set $correctAns to false>>
+<<set $talkedAlready to false>>
+
 Birbby: Wow!
 Birbby: Time to go talk to the NPC. Go to the right.
 
 ===
 title: TestNPC
+position: 142,31
 ---
-NPC: Alright, here's a sample question.
-NPC: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.
+
+<<if $talkedAlready is false>>
+    NPC: Alright, here's a sample question.
+    <<set $talkedAlready to true>>
+<<else>>
+    NPC: Welcome back! Ready to answer?
+<<endif>>
+
+NPC: What is the area of {get_piece("length")} and {get_piece("width")}?
+
+<<if $correctAns is true>>
+    //NPC: That's correct!
+    NPC: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.
+<<else>>
+    NPC: No, unfortunately that's not correct. Try again!
+<<endif>>
 
 ===
