@@ -1,0 +1,12 @@
+﻿title: Start
+tags:
+---
+Birbby: Wow!
+Birbby: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.
+
+===
+title: Test
+---
+
+
+===

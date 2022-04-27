@@ -6,7 +6,7 @@ public class MathProblem : MonoBehaviour
 {
     decimal answer;
 
-    public List<decimal> createProblem() {
+    public List<decimal> CreateProblem() {
         List<decimal> problemPieces = new List<decimal>();
         problemPieces.Add(answer);
         return problemPieces;

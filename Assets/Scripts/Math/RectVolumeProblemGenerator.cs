@@ -7,29 +7,21 @@ public class RectVolumeProblemGenerator : MathProblem
     protected decimal length;
     protected decimal width;
     protected decimal height;
+    
+    public List<decimal> CreateRectVolProblem() {
+        List<decimal> volumeProblem = CreateProblem();
 
-    void Start() {
-        createRectVolProblem();
-    }
-
-    public List<decimal> createRectVolProblem() {
-        List<decimal> volumeProblem = createProblem();
-
-        generateVolumePieces();
-        volumeProblem[0] = calculateVolume();
+        GenerateVolumePieces();
+        volumeProblem[0] = CalculateVolume();
     
         volumeProblem.Add(length);
         volumeProblem.Add(width);
         volumeProblem.Add(height);
 
-        // foreach (decimal item in volumeProblem) {
-        //     Debug.Log(item);
-        // }
-
         return volumeProblem;
     }
 
-    private void generateVolumePieces() {
+    private void GenerateVolumePieces() {
         decimal[] randomNums = new decimal[3];
         for (int i = 0; i < 3; i++) {
             randomNums[i] = Random.Range(1, 15);
@@ -40,7 +32,7 @@ public class RectVolumeProblemGenerator : MathProblem
         height = randomNums[2];
     }
 
-    private decimal calculateVolume() {
+    private decimal CalculateVolume() {
         return length * width * height;
     }
 }

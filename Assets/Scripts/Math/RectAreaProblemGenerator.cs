@@ -7,27 +7,19 @@ public class RectAreaProblemGenerator : MathProblem
     protected decimal length;
     protected decimal width;
 
-    void Start() {
-        createRectAreaProblem();
-    }
+    public List<decimal> CreateRectAreaProblem() {
+        List<decimal> areaProblem = CreateProblem();
 
-    public List<decimal> createRectAreaProblem() {
-        List<decimal> areaProblem = createProblem();
-
-        generateAreaPieces();
-        areaProblem[0] = calculateArea();
+        GenerateAreaPieces();
+        areaProblem[0] = CalculateArea();
     
         areaProblem.Add(length);
         areaProblem.Add(width);
 
-        // foreach (decimal item in areaProblem) {
-        //     Debug.Log(item);
-        // }
-
         return areaProblem;
     }
 
-    private void generateAreaPieces() {
+    private void GenerateAreaPieces() {
         decimal[] randomNums = new decimal[2];
         for (int i = 0; i < 2; i++) {
             randomNums[i] = Random.Range(1, 15);
@@ -37,7 +29,7 @@ public class RectAreaProblemGenerator : MathProblem
         width = randomNums[1];
     }
 
-    private decimal calculateArea() {
+    private decimal CalculateArea() {
         return length * width;
     }
 }

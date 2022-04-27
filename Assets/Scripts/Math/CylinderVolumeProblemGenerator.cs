@@ -9,27 +9,19 @@ public class CylinderVolumeProblemGenerator : MathProblem
 
     const decimal pi = 3.14M;
 
-    void Start() {
-        createCylinderVolProblem();
-    }
+    public List<decimal> CreateCylinderVolProblem() {
+        List<decimal> volumeProblem = CreateProblem();
 
-    public List<decimal> createCylinderVolProblem() {
-        List<decimal> volumeProblem = createProblem();
-
-        generateVolumePieces();
-        volumeProblem[0] = calculateVolume();
+        GenerateVolumePieces();
+        volumeProblem[0] = CalculateVolume();
     
         volumeProblem.Add(radius);
         volumeProblem.Add(height);
 
-        // foreach (decimal item in volumeProblem) {
-        //     Debug.Log(item);
-        // }
-
         return volumeProblem;
     }
 
-    private void generateVolumePieces() {
+    private void GenerateVolumePieces() {
         decimal[] randomNums = new decimal[2];
         for (int i = 0; i < 2; i++) {
             randomNums[i] = Random.Range(1, 15);
@@ -39,7 +31,7 @@ public class CylinderVolumeProblemGenerator : MathProblem
         height = randomNums[1];
     }
 
-    private decimal calculateVolume() {
+    private decimal CalculateVolume() {
         return pi * (decimal)Mathf.Pow((float)radius, 2f) * height;
     }
 }

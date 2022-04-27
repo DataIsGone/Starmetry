@@ -7,27 +7,21 @@ public class CircumferenceProblemGenerator : MathProblem
     decimal radius;
     const decimal pi = 3.14M;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        createCircProblem();
-    }
+    public List<decimal> CreateCircProblem() {
+        List<decimal> circProblem = CreateProblem();
 
-    public List<decimal> createCircProblem() {
-        List<decimal> circProblem = createProblem();
-
-        generateCircPieces();
-        circProblem[0] = calculateCirc();
+        GenerateCircPieces();
+        circProblem[0] = CalculateCirc();
         circProblem.Add(radius);
 
         return circProblem;
     }
 
-    private void generateCircPieces() {
+    private void GenerateCircPieces() {
         radius = Random.Range(1, 15);
     }
 
-    private decimal calculateCirc() {
+    private decimal CalculateCirc() {
         return 2 * pi * radius;
     }
 }
