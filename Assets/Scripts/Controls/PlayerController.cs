@@ -59,6 +59,9 @@ public class PlayerController: MonoBehaviour
                     case "UI":
                         // do nothing?
                         break;
+                    case "NPC":
+                        // do nothing for now?
+                        break;
                     default:
                         moveCharacter();
                         break;
@@ -86,7 +89,7 @@ public class PlayerController: MonoBehaviour
     }
 
     private void DialogSize(int option) {
-        // option + 1 due to Player Ref Bubble being the first child
-        refUI.transform.GetChild(option+1).gameObject.SetActive(true);
+        // option + 2 due to Answer section being Child 0 and Player Ref Bubble being Child 1
+        refUI.transform.GetChild(option+2).gameObject.SetActive(true);
     }
 }

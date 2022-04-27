@@ -2,11 +2,12 @@
 tags:
 ---
 Birbby: Wow!
-Birbby: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.
+Birbby: Time to go talk to the NPC. Go to the right.
 
 ===
-title: Test
+title: TestNPC
 ---
-
+NPC: Alright, here's a sample question.
+NPC: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.
 
 ===

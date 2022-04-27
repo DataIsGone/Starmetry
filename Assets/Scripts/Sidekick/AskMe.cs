@@ -35,14 +35,12 @@ public class AskMe : MonoBehaviour
         toggleMovementOn(env);
     }
 
-    //[YarnCommand("open_scroll")]
     public void openScrollWindow() {
         refDialogue.SetActive(false);
         refDialogueSm.SetActive(true);
         scroll.SetActive(true);
     }
 
-    //[YarnCommand("close_scroll")]
     public void closeScrollWindow() {
         refDialogueSm.SetActive(false);
         refDialogue.SetActive(true);
