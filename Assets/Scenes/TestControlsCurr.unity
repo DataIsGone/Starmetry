@@ -1605,7 +1605,6 @@ GameObject:
   - component: {fileID: 231578583}
   - component: {fileID: 231578582}
   - component: {fileID: 231578581}
-  - component: {fileID: 231578580}
   - component: {fileID: 231578579}
   m_Layer: 5
   m_Name: 4 Button
@@ -1660,20 +1659,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &231578580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231578577}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &231578581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1738,16 +1723,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &231578583
@@ -1801,7 +1786,6 @@ GameObject:
   - component: {fileID: 232917039}
   - component: {fileID: 232917038}
   - component: {fileID: 232917037}
-  - component: {fileID: 232917036}
   - component: {fileID: 232917035}
   m_Layer: 5
   m_Name: Floating Point Button
@@ -1828,7 +1812,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 94.89995, y: -327.00003}
-  m_SizeDelta: {x: 30.138, y: 42.82}
+  m_SizeDelta: {x: 30.156, y: 42.82}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &232917035
 MonoBehaviour:
@@ -1856,20 +1840,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &232917036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232917033}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &232917037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,16 +1904,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: .
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &232917039
@@ -2950,7 +2920,6 @@ GameObject:
   - component: {fileID: 361132266}
   - component: {fileID: 361132265}
   - component: {fileID: 361132264}
-  - component: {fileID: 361132263}
   - component: {fileID: 361132262}
   m_Layer: 5
   m_Name: 6 Button
@@ -3005,20 +2974,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &361132263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361132260}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &361132264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3083,16 +3038,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 6
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &361132266
@@ -3625,7 +3580,6 @@ GameObject:
   - component: {fileID: 452950063}
   - component: {fileID: 452950062}
   - component: {fileID: 452950061}
-  - component: {fileID: 452950060}
   - component: {fileID: 452950059}
   m_Layer: 5
   m_Name: 3 Button
@@ -3680,20 +3634,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &452950060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452950057}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &452950061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3758,16 +3698,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &452950063
@@ -4163,7 +4103,6 @@ GameObject:
   - component: {fileID: 543837326}
   - component: {fileID: 543837325}
   - component: {fileID: 543837324}
-  - component: {fileID: 543837323}
   - component: {fileID: 543837322}
   m_Layer: 5
   m_Name: Submit Button
@@ -4190,7 +4129,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 36, y: -429}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 91.35, y: 42.82}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &543837322
 MonoBehaviour:
@@ -4218,20 +4157,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &543837323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543837320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &543837324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4296,9 +4221,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: SubmitInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4492,7 +4417,6 @@ GameObject:
   - component: {fileID: 567309245}
   - component: {fileID: 567309244}
   - component: {fileID: 567309243}
-  - component: {fileID: 567309246}
   m_Layer: 5
   m_Name: Player Math Answer Window
   m_TagString: Untagged
@@ -4573,53 +4497,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &567309246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567309241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: d527a22fb6feb4a078a29877bf340573,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1641880107}
-        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 81aae5c3-30c0-46ab-b8e8-0e810a3ce833
-    m_ActionName: InputPad/ClickNumber[/Mouse/leftButton]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: InputPad
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &580144673
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,7 +4622,6 @@ GameObject:
   - component: {fileID: 583749838}
   - component: {fileID: 583749837}
   - component: {fileID: 583749836}
-  - component: {fileID: 583749835}
   - component: {fileID: 583749834}
   m_Layer: 5
   m_Name: 9 Button
@@ -4800,20 +4676,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &583749835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583749832}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &583749836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4878,16 +4740,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 9
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &583749838
@@ -5898,7 +5760,6 @@ GameObject:
   - component: {fileID: 725498400}
   - component: {fileID: 725498399}
   - component: {fileID: 725498398}
-  - component: {fileID: 725498397}
   - component: {fileID: 725498396}
   m_Layer: 5
   m_Name: 5 Button
@@ -5953,20 +5814,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &725498397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725498394}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &725498398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6031,16 +5878,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &725498400
@@ -6933,7 +6780,6 @@ GameObject:
   - component: {fileID: 894573387}
   - component: {fileID: 894573386}
   - component: {fileID: 894573385}
-  - component: {fileID: 894573384}
   - component: {fileID: 894573383}
   m_Layer: 5
   m_Name: 7 Button
@@ -6988,20 +6834,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &894573384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894573381}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &894573385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7066,16 +6898,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 7
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &894573387
@@ -7116,6 +6948,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894573381}
   m_CullTransparentMesh: 1
+--- !u!1 &898198093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898198094}
+  - component: {fileID: 898198095}
+  m_Layer: 0
+  m_Name: YarnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &898198094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898198093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1230555914}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &898198095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898198093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febdfd8dfadd8424f9bc1e940f1e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contBut: {fileID: 223499058}
+  answerMode: {fileID: 1588231710}
 --- !u!1 &919696858
 GameObject:
   m_ObjectHideFlags: 0
@@ -7398,7 +7275,7 @@ GameObject:
   - component: {fileID: 924413620}
   - component: {fileID: 924413619}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Answer Display Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7420,7 +7297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -50}
+  m_AnchoredPosition: {x: 130.8, y: -50}
   m_SizeDelta: {x: 260, y: 207.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &924413619
@@ -7477,8 +7354,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7506,7 +7383,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -17.578049, y: 0, z: -18.933563, w: 159.5827}
+  m_margin: {x: -0.2200928, y: 0, z: -0.6636658, w: 159.5827}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8554,10 +8431,9 @@ GameObject:
   - component: {fileID: 1164537814}
   - component: {fileID: 1164537813}
   - component: {fileID: 1164537812}
-  - component: {fileID: 1164537811}
   - component: {fileID: 1164537810}
   m_Layer: 5
-  m_Name: Backspace Button
+  m_Name: Clear Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8609,20 +8485,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1164537811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164537808}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &1164537812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8687,9 +8549,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: ClearInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9279,6 +9141,8 @@ Transform:
   - {fileID: 1197062392}
   - {fileID: 2088750975}
   - {fileID: 1289903107}
+  - {fileID: 1898494731}
+  - {fileID: 898198094}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9338,6 +9202,7 @@ GameObject:
   - component: {fileID: 1289903107}
   - component: {fileID: 1289903108}
   - component: {fileID: 1289903109}
+  - component: {fileID: 1289903110}
   m_Layer: 0
   m_Name: StoryDataManager
   m_TagString: Untagged
@@ -9385,6 +9250,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mathManager: {fileID: 1197062391}
+--- !u!114 &1289903110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289903106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd607ee68f94f42c2a025c839c205fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1307832599
 GameObject:
   m_ObjectHideFlags: 0
@@ -9532,7 +9409,6 @@ GameObject:
   - component: {fileID: 1319967601}
   - component: {fileID: 1319967600}
   - component: {fileID: 1319967599}
-  - component: {fileID: 1319967598}
   - component: {fileID: 1319967597}
   m_Layer: 5
   m_Name: 8 Button
@@ -9587,20 +9463,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1319967598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319967595}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &1319967599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9665,16 +9527,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 8
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1319967601
@@ -11229,9 +11091,7 @@ GameObject:
   - component: {fileID: 1641880105}
   - component: {fileID: 1641880104}
   - component: {fileID: 1641880103}
-  - component: {fileID: 1641880102}
   - component: {fileID: 1641880101}
-  - component: {fileID: 1641880107}
   m_Layer: 5
   m_Name: 1 Button
   m_TagString: Untagged
@@ -11285,20 +11145,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1641880102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641880099}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &1641880103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11363,16 +11209,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1641880105
@@ -11413,18 +11259,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641880099}
   m_CullTransparentMesh: 1
---- !u!114 &1641880107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641880099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3a17a11b64a744858020f5dae0c0f3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1656984075
 GameObject:
   m_ObjectHideFlags: 0
@@ -13408,6 +13242,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversationStartNode: TestNPC
+--- !u!1 &1898494730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1898494731}
+  - component: {fileID: 1898494732}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1898494731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898494730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1230555914}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898494732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898494730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a17a11b64a744858020f5dae0c0f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayStrGameObject: {fileID: 924413617}
 --- !u!1 &1911046078
 GameObject:
   m_ObjectHideFlags: 0
@@ -14537,7 +14415,6 @@ GameObject:
   - component: {fileID: 2069382481}
   - component: {fileID: 2069382480}
   - component: {fileID: 2069382479}
-  - component: {fileID: 2069382478}
   - component: {fileID: 2069382477}
   m_Layer: 5
   m_Name: 0 Button
@@ -14592,20 +14469,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &2069382478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069382475}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &2069382479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14670,16 +14533,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2069382481
@@ -14776,7 +14639,6 @@ GameObject:
   - component: {fileID: 2104001474}
   - component: {fileID: 2104001473}
   - component: {fileID: 2104001472}
-  - component: {fileID: 2104001471}
   - component: {fileID: 2104001470}
   m_Layer: 5
   m_Name: 2 Button
@@ -14831,20 +14693,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &2104001471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104001468}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &2104001472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14909,16 +14757,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269157426}
-        m_TargetAssemblyTypeName: AskMe, Assembly-CSharp
-        m_MethodName: openScrollWindow
-        m_Mode: 1
+      - m_Target: {fileID: 1898494732}
+        m_TargetAssemblyTypeName: InputSystem, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2104001474
@@ -15185,10 +15033,10 @@ RectTransform:
   m_Father: {fileID: 2735837307561832356}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 760, y: -50.11}
-  m_SizeDelta: {x: 1480, y: 60.22}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2735837307561832356
 RectTransform:
@@ -15208,8 +15056,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 80}
-  m_SizeDelta: {x: -400.00003, y: 100.22}
+  m_AnchoredPosition: {x: 0, y: 747}
+  m_SizeDelta: {x: -400.00003, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2735837307561832357
 MonoBehaviour:
@@ -15240,12 +15088,12 @@ GameObject:
   - component: {fileID: 2735837307561832379}
   - component: {fileID: 2735837307561832360}
   m_Layer: 5
-  m_Name: Options List View
+  m_Name: Options List View Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2735837307561832360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15558,6 +15406,7 @@ MonoBehaviour:
   _variableStorage: {fileID: 4426091252440542735}
   dialogueViews:
   - {fileID: 1141081787}
+  - {fileID: 2735837307561832376}
   startNode: Start
   startAutomatically: 1
   runSelectedOptionAsLine: 0

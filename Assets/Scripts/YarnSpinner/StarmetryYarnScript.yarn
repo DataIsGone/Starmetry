@@ -2,7 +2,7 @@
 tags:
 position: -93,-48
 ---
-<<set $correctAns to false>>
+// <<set $correctAns to false>>
 <<set $talkedAlready to false>>
 
 Birbby: Wow!
@@ -20,10 +20,22 @@ position: 142,31
     NPC: Welcome back! Ready to answer?
 <<endif>>
 
+//<<toggle_answer YarnManager>>
 NPC: What is the area of {get_piece("length")} and {get_piece("width")}?
+-> Answer Now
+-> Exit
+// switch buttons here
+    // turn off continue button
+    // turn on answer window
+//<<answer_on>>
 
-<<if $correctAns is true>>
-    //NPC: That's correct!
+// switch buttons back to original state
+    // turn on continue button
+    // turn off answer window
+//<<answer_off>>
+
+<<if compare() is true>>
+    NPC: That's correct!
     NPC: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.
 <<else>>
     NPC: No, unfortunately that's not correct. Try again!

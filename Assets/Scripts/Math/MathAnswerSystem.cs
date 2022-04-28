@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class MathAnswerSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject mathManager;
-    private List<decimal> currProblem;
+    private static decimal playerAnswer;
 
-    private decimal GetInput() {
-        return 0M;
+    [YarnFunction("compare")]
+    public static bool CompareInputYarn() {
+        return playerAnswer == GetCurrAnswer();
     }
 
-    private bool CompareInput() {
-        return true;
+    private static decimal GetCurrAnswer() {
+        //decimal answer = gameObject.GetComponent<YarnValues>().GetValueForYarn("answer");
+        return YarnValues.GetValueForYarn("answer");
     }
 
+    // private void SetPlayerAnswer(decimal thisAnswer) {
+    //     playerAnswer = thisAnswer;
+    // }
 
+    public static void CompareInput(decimal thisAnswer) {
+        playerAnswer = thisAnswer;
+    }
 }
