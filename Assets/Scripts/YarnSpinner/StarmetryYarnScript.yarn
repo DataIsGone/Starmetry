@@ -14,26 +14,22 @@ position: 142,31
 ---
 
 <<if $talkedAlready is false>>
-    NPC: Alright, here's a sample question.
+    NPC: Hey! Here's a sample question.
     <<set $talkedAlready to true>>
 <<else>>
     NPC: Welcome back! Ready to answer?
 <<endif>>
 
-//<<toggle_answer YarnManager>>
 NPC: What is the area of {get_piece("length")} and {get_piece("width")}?
 -> Answer Now
--> Exit
-// switch buttons here
-    // turn off continue button
-    // turn on answer window
-//<<answer_on>>
-
-// switch buttons back to original state
-    // turn on continue button
-    // turn off answer window
-//<<answer_off>>
-
+    NPC: Here's where the answer window would pop up.
+    <<player_answering>>
+    <<jump AnswerNPC>>
+-> I need some time
+    NPC: Alright, come talk to me again when you're ready.
+===
+title: AnswerNPC
+---
 <<if compare() is true>>
     NPC: That's correct!
     NPC: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.

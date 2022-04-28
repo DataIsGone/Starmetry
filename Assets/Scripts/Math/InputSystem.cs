@@ -44,7 +44,6 @@ public class InputSystem : MonoBehaviour
     
     public void SubmitInput() {
         if (ValidateInput()) {
-            // send to answer system
             MathAnswerSystem.CompareInput(decimal.Parse(GetInput()));
         }
         // need feedback for invalid submission
