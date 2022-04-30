@@ -7,7 +7,7 @@ public class InputSystem : MonoBehaviour
     [SerializeField] private GameObject displayStrGameObject;
     private string thisStrChar;
     private string playerInput;
-
+    private bool firstOpened;
     private const string BLANK_ANSWER = "---";
 
     void Awake() {
@@ -15,11 +15,16 @@ public class InputSystem : MonoBehaviour
     }
 
     void Start() {
+        firstOpened = true;
         displayStrGameObject.GetComponent<TMPro.TextMeshProUGUI>().text = BLANK_ANSWER;
         DisplayInput();
     }
 
     void Update() {
+        if (firstOpened) {
+            firstOpened = false;
+            ClearInput();
+        }
         DisplayInput();
     }
 
@@ -47,10 +52,10 @@ public class InputSystem : MonoBehaviour
             MathAnswerSystem.CompareInput(decimal.Parse(GetInput()));
         }
         // need feedback for invalid submission
+        firstOpened = true;
     }
 
     private bool ValidateInput() {
         return !(playerInput == BLANK_ANSWER);
     }
-
 }

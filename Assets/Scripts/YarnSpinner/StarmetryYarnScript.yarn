@@ -2,13 +2,15 @@
 tags:
 position: -93,-48
 ---
-// <<set $correctAns to false>>
-<<set $talkedAlready to false>>
+<<set $talkedAlready to false>> // TEST
+
+<<set $refOn to false>>
 
 Birbby: Wow!
 Birbby: Time to go talk to the NPC. Go to the right.
 
 ===
+
 title: TestNPC
 position: 142,31
 ---
@@ -22,12 +24,12 @@ position: 142,31
 
 NPC: What is the area of {get_piece("length")} and {get_piece("width")}?
 -> Answer Now
-    NPC: Here's where the answer window would pop up.
-    <<player_answering>>
+    <<math_answering>>
     <<jump AnswerNPC>>
 -> I need some time
     NPC: Alright, come talk to me again when you're ready.
 ===
+
 title: AnswerNPC
 ---
 <<if compare() is true>>
@@ -36,5 +38,32 @@ title: AnswerNPC
 <<else>>
     NPC: No, unfortunately that's not correct. Try again!
 <<endif>>
+===
 
+title: AskMe
+---
+Birbby: Did you need something?
+
+<<ref_answering>>
+<<if goals() == true>>
+    <<jump PlayerGoals>>
+<<elseif ref() == true>>
+    <<if $refOn is false>>
+        Birbby: There you go. Close it yourself when you're done.
+        <<set $refOn to true>>
+    <<else>>
+        Birbby: It's up already.
+    <<endif>>
+<<elseif close() == true>>
+    Birbby: Changed your mind?
+<<endif>>
+
+Birbby: Talk to me if you need me again.
+
+===
+
+title: PlayerGoals
+---
+
+Birbby: Here's where I'd tell you about your goals.
 ===

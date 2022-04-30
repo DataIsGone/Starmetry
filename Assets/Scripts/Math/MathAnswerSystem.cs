@@ -36,11 +36,11 @@ public class MathAnswerSystem : MonoBehaviour
         answerMode.SetActive(true);
     }
 
-    [YarnCommand("player_answering")]
+    [YarnCommand("math_answering")]
     static IEnumerator PlayerAnswering() {
-        Debug.Log("Answer mode started");
+        Debug.Log("Math Answer mode started");
         StartAnswer();
         yield return new WaitUntil(() => playerAnswered); // player has submitted answer
-        Debug.Log("Finished");
+        Debug.Log("Finished PlayerAnswering()");
     }
 }

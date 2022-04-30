@@ -17,14 +17,6 @@ public class FollowPlayer : MonoBehaviour
             var step = speed * Time.fixedDeltaTime;
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
         }
-        // float interpolation = speed * Time.deltaTime;
-
-        // Vector3 position = this.transform.position;
-        // position.x = Mathf.Lerp(this.transform.position.x, player.transform.position.x, interpolation);
-        // position.y = Mathf.Lerp(this.transform.position.y, player.transform.position.y, interpolation);
-        // position.z = Mathf.Lerp(this.transform.position.z, player.transform.position.z, interpolation);
-
-        // this.transform.position = position;
     }
 
     void resetPosition() {
