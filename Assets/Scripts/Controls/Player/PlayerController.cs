@@ -43,6 +43,7 @@ public class PlayerController: MonoBehaviour
             if (Physics.Raycast(ray, out hitPoint)) {
                 switch(hitPoint.collider.gameObject.tag) {
                     case "Player":
+                    case "Unclickable":
                         // do nothing
                         break;
                     case "Sidekick":

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChangeEnvironment : MonoBehaviour
 {
     public static GameObject envObject;
-    const string ENV = "GroundTest";
+    const string ENV = "Land";
 
     void Start() {
         envObject = GameObject.Find(ENV);
