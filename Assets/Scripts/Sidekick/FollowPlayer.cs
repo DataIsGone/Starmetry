@@ -9,7 +9,6 @@ public class FollowPlayer : MonoBehaviour
     float distance;
     public float minDistance = 1.75f;
 
-    // Update is called once per frame
     void Update()
     {
         distance = Vector3.Distance(player.transform.position, transform.position);

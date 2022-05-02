@@ -9,7 +9,7 @@ public class AskMe : MonoBehaviour
     int defaultLayer;
 
     public GameObject env;
-    //public GameObject refUI;
+    
     public GameObject scroll;
 
     public GameObject dialogueView;
@@ -43,6 +43,7 @@ public class AskMe : MonoBehaviour
 
         origWindowPos = dialogueView.transform.position;
         smWindowPos = new Vector3(origWindowPos.x + SM_POS_X, origWindowPos.y, origWindowPos.z);
+        //smWindowPos = new Vector3((origWindowPos.x + (origWindowPos.x * 0.3f)), origWindowPos.y, origWindowPos.z);
 
         origTextMargin = dialogueTextTMP.margin;
         smTextMargin = new Vector4(origTextMargin.x + SM_MARGIN_LR, origTextMargin.y, origTextMargin.z - SM_MARGIN_LR, origTextMargin.w);
@@ -63,7 +64,6 @@ public class AskMe : MonoBehaviour
     }
 
     public void StopAsking(GameObject env) {
-        //playerAnswered = true;
         clickedClose = true;
         answerMode.SetActive(false);
         ToggleMovementOn(env);
@@ -107,7 +107,6 @@ public class AskMe : MonoBehaviour
 
     [YarnFunction("ref")]
     public static bool OpenRef() {
-        //playerAnswered = true;
         answerMode.SetActive(false);
         Debug.Log(clickedRef);
         return clickedRef;
