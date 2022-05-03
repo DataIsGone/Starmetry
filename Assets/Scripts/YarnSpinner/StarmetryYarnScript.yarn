@@ -32,7 +32,7 @@ NPC: What is the area of {get_piece("length")} and {get_piece("width")}?
 
 title: AnswerNPC
 ---
-<<if compare() is true>>
+<<if compare(1) is true>>
     NPC: That's correct!
     NPC: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.
 <<else>>

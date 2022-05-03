@@ -1,0 +1,53 @@
+﻿title: Intro3
+tags:
+---
+<<set $firstConvo to false>>
+<<set $haveWheel to false>>
+
+
+Bribby: Hey, I'm starting from here.
+===
+
+title: BusinessIntro
+---
+<<if $firstConvo is false>>
+    Business: Hello.
+    <<set $firstConvo to true>>
+<<else>>
+    Business: You're back. What do you need to know?
+    // IRRIGATION PROBLEM (CURR PROBLEM (1) )
+    -> Irrigation System
+        Business: What did you want to know about the irrigation system?
+        -> Give Volume
+            Business: You know how much water it can hold?
+            <<math_answering>>
+            <<jump AnsweringIrrigation>>
+    // WATER WHEEL PROBLEM (CURR PROBLEM 2)
+    -> Water Wheel
+        Business: What did you want to ask about the water wheel?
+        -> Give Wheel <<if $haveWheel is true>>
+            <<jump AnsweringWaterWheel>>
+        -> Question 1
+        -> Question 2
+        -> Question 3
+    -> Nevermind
+        Business: Get back to it.
+<<endif>>
+===
+
+title: AnsweringWaterWheel
+---
+// make new compare here
+// if-else for dialogue
+// instructions: put wheel back
+Business: Made it to AnsweringWaterWheel
+===
+
+title: AnsweringIrrigation
+---
+<<if compare(1) is true>>
+    Business: Oh, that's how much water it can hold...
+<<else>>
+    Business: That doesn't sound correct to me.
+<<endif>>
+===

@@ -10,26 +10,9 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
   - {fileID: 6391573757903218779, guid: 5c92f7fa5e6674ba88e7082d7c6c36d3, type: 3}
+  - {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66, type: 3}
   compileErrors: []
-  serializedDeclarations:
-  - name: $talkedAlready
-    typeName: Bool
-    defaultValueBool: 0
-    defaultValueNumber: 0
-    defaultValueString: 
-    description: Implicitly declared in StarmetryYarnScript.yarn, node Start
-    isImplicit: 1
-    sourceYarnAsset: {fileID: 6391573757903218779, guid: 5c92f7fa5e6674ba88e7082d7c6c36d3,
-      type: 3}
-  - name: $goalsOption
-    typeName: Bool
-    defaultValueBool: 0
-    defaultValueNumber: 0
-    defaultValueString: 
-    description: Implicitly declared in StarmetryYarnScript.yarn, node AskMe
-    isImplicit: 1
-    sourceYarnAsset: {fileID: 6391573757903218779, guid: 5c92f7fa5e6674ba88e7082d7c6c36d3,
-      type: 3}
+  serializedDeclarations: []
   defaultLanguage: en-US
   languagesToSourceAssets: []
   useAddressableAssets: 0
@@ -44,6 +27,12 @@ ScriptedImporter:
     Parameters:
     - item
   - Name: RemindGoals
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: OpenRef
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: Nevermind
     ReturnType: -> Boolean
     Parameters: []
   - Name: Random

@@ -16,19 +16,30 @@ public class MathAnswerSystem : MonoBehaviour
     }
 
     [YarnFunction("compare")]
-    public static bool CompareInputYarn() {
-        answerMode.SetActive(false);
+    public static bool CompareInputYarn(int problem) {
+        if (problem == 1) {
+            answerMode.SetActive(false);
+        } else {
+            //SetValue("$");
+            // find game component holding item value
+            // playerAnswer == item value;
+        }
         playerAnswered = true;
-        return playerAnswer == GetCurrAnswer();
+        return playerAnswer == GetCurrAnswer(problem);
     }
 
-    private static decimal GetCurrAnswer() {
-        return YarnValues.GetValueForYarn("answer");
+    private static decimal GetCurrAnswer(int problem) {
+        if (problem == 1) {
+            return YarnValues.GetValueForYarn("answer");
+        } else {
+            // return problem 2 answer
+            return YarnValues.GetValue2ForYarn("answer");
+        }
     }
 
     public static void CompareInput(decimal thisAnswer) {
         playerAnswer = thisAnswer;
-        CompareInputYarn();
+        CompareInputYarn(1);    // only currProblem needs input from Answer Mode, not currProblem2
     }
 
     public static void StartAnswer() {

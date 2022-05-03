@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c92f7fa5e6674ba88e7082d7c6c36d3
+guid: 0b0848dd8b7f54b2bb43d00ad61dbe66
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,9 +11,4 @@ ScriptedImporter:
   LastImportHadImplicitStringIDs: 1
   LastImportHadAnyStrings: 1
   isSuccessfullyParsed: 1
-  parseErrorMessages:
-  - '35:5: Error: Function compare expects 0 parameters, but received 1
-
-    compare(1)
-
-'
+  parseErrorMessages: []

@@ -16,6 +16,10 @@ public class YarnValues : MonoBehaviour
         currProblem = mathManager.GetComponent<RectAreaProblemGenerator>().CreateRectAreaProblem();
     }
 
+    private void GenerateLevelProblems() {
+        
+    }
+
     private void AssignCurrProblem(string probType) {
         switch (probType) {
             case "angle":
@@ -60,4 +64,27 @@ public class YarnValues : MonoBehaviour
                 return 0M;
         }
     }
+
+    public static decimal GetValue2ForYarn(string item) {
+        switch (item) {
+            case "answer":
+                return currProblem2[0];
+            case "length":
+                return currProblem2[1];
+            case "width":
+                return currProblem2[2];
+            case "radius":
+                return currProblem2[1];
+            case "cynHeight":
+                return currProblem2[2];
+            case "rectHeight":
+                return currProblem2[3];
+            case "angle":
+                return currProblem2[1];
+            default:
+                Debug.Log("Could not find requested item at currProblem2[" + item + "]. Using 0 instead.");
+                return 0M;
+        }
+    }
+
 }
