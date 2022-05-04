@@ -9,6 +9,7 @@ TagManager:
   - Sidekick
   - Environment
   - NPC
+  - Collectable
   layers:
   - Default
   - TransparentFX

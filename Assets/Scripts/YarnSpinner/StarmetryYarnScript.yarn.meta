@@ -11,9 +11,4 @@ ScriptedImporter:
   LastImportHadImplicitStringIDs: 1
   LastImportHadAnyStrings: 1
   isSuccessfullyParsed: 1
-  parseErrorMessages:
-  - '35:5: Error: Function compare expects 0 parameters, but received 1
-
-    compare(1)
-
-'
+  parseErrorMessages: []

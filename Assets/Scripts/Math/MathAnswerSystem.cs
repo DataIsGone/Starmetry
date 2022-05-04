@@ -28,7 +28,7 @@ public class MathAnswerSystem : MonoBehaviour
         return playerAnswer == GetCurrAnswer(problem);
     }
 
-    private static decimal GetCurrAnswer(int problem) {
+    public static decimal GetCurrAnswer(int problem) {
         if (problem == 1) {
             return YarnValues.GetValueForYarn("answer");
         } else {

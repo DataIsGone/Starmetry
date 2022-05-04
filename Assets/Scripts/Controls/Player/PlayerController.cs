@@ -56,6 +56,10 @@ public class PlayerController: MonoBehaviour
                         // do nothing for now?
                         StopPlayer();
                         break;
+                    case "Collectable":
+                        // invoke collectable
+                        StopPlayer();
+                        break;
                     default:
                         MovePlayer();
                         break;
@@ -85,6 +89,5 @@ public class PlayerController: MonoBehaviour
         } else {
             sidekick.OrigDialogueSize();
         }
-        //refUI.SetActive(true);
     }
 }

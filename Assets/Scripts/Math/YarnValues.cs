@@ -20,17 +20,15 @@ public class YarnValues : MonoBehaviour
         
     }
 
-    private void AssignCurrProblem(string probType) {
+    public void AssignCurrProblem(string probType) {
         switch (probType) {
             case "angle":
                 currProblem = mathManager.GetComponent<AngleProblemGenerator>().CreateCompAngleProblem();
                 currProblem2 = mathManager.GetComponent<AngleProblemGenerator>().CreateSuppAngleProblem();
                 break;
-            case "area":
+            case "area/circ":
                 currProblem = mathManager.GetComponent<RectAreaProblemGenerator>().CreateRectAreaProblem();
-                break;
-            case "circ":
-                currProblem = mathManager.GetComponent<CircumferenceProblemGenerator>().CreateCircProblem();
+                currProblem2 = mathManager.GetComponent<CircumferenceProblemGenerator>().CreateCircProblem();
                 break;
             case "vol":
                 currProblem = mathManager.GetComponent<RectVolumeProblemGenerator>().CreateRectVolProblem();
