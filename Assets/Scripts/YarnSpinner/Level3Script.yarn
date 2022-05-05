@@ -16,27 +16,31 @@ title: BusinessIntro
     Business: Cylinder Vol is {get_piece2("answer")}.
     <<set $firstConvo to true>>
 <<else>>
-    Business: You're back. What do you need to know?
-    // IRRIGATION PROBLEM (CURR PROBLEM 1)
-    -> Irrigation System
-        Business: What did you want to know about the irrigation system?
-        -> Give Volume
-            Business: You know how much water it can hold?
-            <<math_answering>>
-            <<jump AnsweringIrrigation>>
-    // WATER WHEEL PROBLEM (CURR PROBLEM 2)
-    -> Water Wheel
-        Business: What did you want to ask about the water wheel?
-        -> Give Wheel <<if check_has_wheel() is true>>
-            <<jump AnsweringWaterWheel>>
-        -> Question 1
-            Business: Answer to Question 1
-        -> Question 2
-            Business: Answer to Question 2
-        -> Question 3
-            Business: Answer to Question 3
-    -> Nevermind
-        Business: Get back to it.
+    <<if $wheelComplete is true and $irrigationComplete is true>>
+        <<jump CompletedLevel3>>
+    <<else>>
+        Business: You're back. What do you need to know?
+        // IRRIGATION PROBLEM (CURR PROBLEM 1)
+        -> Irrigation System
+            Business: What did you want to know about the irrigation system?
+            -> Give Volume
+                Business: You know how much water it can hold?
+                <<math_answering>>
+                <<jump AnsweringIrrigation>>
+        // WATER WHEEL PROBLEM (CURR PROBLEM 2)
+        -> Water Wheel
+            Business: What did you want to ask about the water wheel?
+            -> Give Wheel <<if check_has_wheel() is true>>
+                <<jump AnsweringWaterWheel>>
+            -> Question 1
+                Business: Answer to Question 1
+            -> Question 2
+                Business: Answer to Question 2
+            -> Question 3
+                Business: Answer to Question 3
+        -> Nevermind
+            Business: Get back to it.
+    <<endif>>
 <<endif>>
 ===
 
@@ -45,7 +49,12 @@ title: AnsweringWaterWheel
 Business: You found a wheel that works for me?
 <<if compare(2) is true>>
     Business: That's the correct one!
-
+    <<set $wheelComplete to true>>
+    <<if $wheelComplete is true and $irrigationComplete is true>>
+        <<jump CompletedLevel3>>
+    <<else>>
+        Business: What about the irrigation box?
+    <<endif>>
 <<else>>
     Business: I don't think that's the right wheel.
     Business: Why don't you put that one back where you found it?
@@ -57,7 +66,36 @@ title: AnsweringIrrigation
 ---
 <<if compare(1) is true>>
     Business: Oh, that's how much water it can hold...
+    <<set $irrigationComplete to true>>
+    <<if $wheelComplete is true and $irrigationComplete is true>>
+        <<jump CompletedLevel3>>
+    <<else>>
+        Business: Can you help me with the wheel now?
+    <<endif>>
 <<else>>
     Business: That doesn't sound correct to me.
 <<endif>>
+===
+
+title: CompletedLevel3
+---
+Business: Oh WOW. You actually did it.
+Business: I'll start up the irrigation machine.
+Business: Well, actually...
+Business: Could you put the wheel on that machine there for me?
+
+// once player puts wheel on machine
+Business: Alright, starting!
+
+
+// camera pans to wheel
+// wheel begins to spin
+// camera pans to irrigation box
+// irrigation box rotates
+// camera pans, following star rolling off
+// camera comes back to player
+
+Bribby: After that star!
+
+// player and Birbby move off screen
 ===

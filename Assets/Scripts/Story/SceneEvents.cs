@@ -6,15 +6,17 @@ using Yarn.Unity;
 public class SceneEvents : MonoBehaviour
 {
     [SerializeField] private Animator irrigationAnimator;
-    //public GameObject box;
-    // Start is called before the first frame update
+    [SerializeField] private Animator wheelAnimator;
+    [SerializeField] private GameObject wheelModel;
+
     void Awake() {
         //animBox.enabled = false;
+        wheelModel.SetActive(false);
     }
 
     void Start()
     {
-        
+
     }
 
     // ---------- LEVEL 1
@@ -23,14 +25,18 @@ public class SceneEvents : MonoBehaviour
 
     // ---------- LEVEL 3
 
-    [YarnCommand("rotate_wheel")]
-    public static void RotateWheel() {
+    [YarnCommand("place_wheel")]
+    public void PlaceWheel() {
+        wheelModel.SetActive(false);
+    }
 
+    [YarnCommand("rotate_wheel")]
+    public void RotateWheel() {
+        wheelAnimator.Play("wheel_rotate");
     }
 
     [YarnCommand("rotate_box")]
     public void RotateBox() {
-        //animBox.enabled = true;
         irrigationAnimator.Play("box_rotate");
     }
 }
