@@ -2,8 +2,8 @@
 tags:
 ---
 <<set $firstConvo to false>>
-<<set $haveWheel to false>>
-
+<<set $irrigationComplete to false>>
+<<set $wheelComplete to false>>
 
 Bribby: Hey, I'm starting from here.
 ===
@@ -27,11 +27,14 @@ title: BusinessIntro
     // WATER WHEEL PROBLEM (CURR PROBLEM 2)
     -> Water Wheel
         Business: What did you want to ask about the water wheel?
-        -> Give Wheel <<if $haveWheel is true>>
+        -> Give Wheel <<if check_has_wheel() is true>>
             <<jump AnsweringWaterWheel>>
         -> Question 1
+            Business: Answer to Question 1
         -> Question 2
+            Business: Answer to Question 2
         -> Question 3
+            Business: Answer to Question 3
     -> Nevermind
         Business: Get back to it.
 <<endif>>
@@ -39,10 +42,15 @@ title: BusinessIntro
 
 title: AnsweringWaterWheel
 ---
-// make new compare here
-// if-else for dialogue
-// instructions: put wheel back
-Business: Made it to AnsweringWaterWheel
+Business: You found a wheel that works for me?
+<<if compare(2) is true>>
+    Business: That's the correct one!
+
+<<else>>
+    Business: I don't think that's the right wheel.
+    Business: Why don't you put that one back where you found it?
+    Business: And come back to me with a different one!
+<<endif>>
 ===
 
 title: AnsweringIrrigation

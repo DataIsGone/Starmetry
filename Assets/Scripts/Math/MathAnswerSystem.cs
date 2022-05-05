@@ -20,9 +20,7 @@ public class MathAnswerSystem : MonoBehaviour
         if (problem == 1) {
             answerMode.SetActive(false);
         } else {
-            //SetValue("$");
-            // find game component holding item value
-            // playerAnswer == item value;
+            playerAnswer = PlayerInventory.GetValue();
         }
         playerAnswered = true;
         return playerAnswer == GetCurrAnswer(problem);

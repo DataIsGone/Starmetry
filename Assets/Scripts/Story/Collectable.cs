@@ -34,7 +34,11 @@ public class Collectable : MonoBehaviour
     }
 
     private void OnMouseExit() {
-        if (PlayerInventory.GetValue() == PlayerInventory.GetBaseValue()) {
+        if (PlayerInventory.GetValue() == GetCollectableValue()) {
+            outline.enabled = true;
+            tmp.SetActive(true);
+        }
+        else {
             outline.enabled = false;
             tmp.SetActive(false);
         }
@@ -46,24 +50,17 @@ public class Collectable : MonoBehaviour
         } else {
             SelectCollectable();
         }
+        PlayerInventory.ChangeWheelStatus();
     }
 
     private void SelectCollectable() {
-        // use invisible material on selected item
-        // turn on outline on invisible object
-        // set user as holding value (can only hold one value at a time)
         gameObject.GetComponent<MeshRenderer>().material = transMat;
         PlayerInventory.SetValue(ThisValue);
-        Debug.Log("Collectable selected: " + PlayerInventory.GetValue());
     }
 
     private void PutBackCollectable() {
-        // change from invisible material back to original one
-        // turn off persistent outline
-        // set the user's value as either 0 or the new value they're picking up
         gameObject.GetComponent<MeshRenderer>().material = origMat;
         PlayerInventory.SetValue(PlayerInventory.GetBaseValue());
-        Debug.Log("Collectable returned: " + PlayerInventory.GetValue());
     }
 
     public decimal GetCollectableValue() {
