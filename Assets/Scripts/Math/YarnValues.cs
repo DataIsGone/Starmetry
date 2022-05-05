@@ -5,20 +5,10 @@ using Yarn.Unity;
 
 public class YarnValues : MonoBehaviour
 {
-    [SerializeField] private GameObject mathManager;
+    public GameObject mathManager;
 
-    private static List<decimal> currProblem;
-    private static List<decimal> currProblem2;
-
-    void Start()
-    {
-        // TODO: TEST, REMOVE
-        currProblem = mathManager.GetComponent<RectAreaProblemGenerator>().CreateRectAreaProblem();
-    }
-
-    private void GenerateLevelProblems() {
-        
-    }
+    public static List<decimal> currProblem;
+    public static List<decimal> currProblem2;
 
     public void AssignCurrProblem(string probType) {
         switch (probType) {
@@ -32,7 +22,7 @@ public class YarnValues : MonoBehaviour
                 break;
             case "vol":
                 currProblem = mathManager.GetComponent<RectVolumeProblemGenerator>().CreateRectVolProblem();
-                currProblem2 = mathManager.GetComponent<CylinderVolumeProblemGenerator>().CreateCylinderVolProblem(); 
+                currProblem2 = mathManager.GetComponent<CylinderVolumeProblemGenerator>().CreateCylinderVolProblem();
                 break;
             default:
                 Debug.Log("Unable to assign a problem to this area.");
@@ -63,6 +53,7 @@ public class YarnValues : MonoBehaviour
         }
     }
 
+    [YarnFunction("get_piece2")]
     public static decimal GetValue2ForYarn(string item) {
         switch (item) {
             case "answer":

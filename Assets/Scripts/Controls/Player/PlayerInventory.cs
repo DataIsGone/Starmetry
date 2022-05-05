@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public static decimal currPlayerValue;
+    private const decimal BASE_VALUE = 0M;
     
     void Start()
     {
@@ -17,5 +18,9 @@ public class PlayerInventory : MonoBehaviour
 
     public static decimal GetValue() {
         return currPlayerValue;
+    }
+
+    public static decimal GetBaseValue() {
+        return BASE_VALUE;
     }
 }

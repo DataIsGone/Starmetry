@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class StoryData : MonoBehaviour
 {
     public int topicsUnlocked;
-    public GameObject mathAnswerSystem;
-    private MathAnswerSystem problems;
+    //public GameObject yarnValues;
+    private YarnValues problems;
     private const string SCENE_1 = "Level1";
     private const string SCENE_2 = "Level2";
     private const string SCENE_3 = "Level3";
@@ -17,17 +17,18 @@ public class StoryData : MonoBehaviour
     }
 
     void Start() {
-        problems = mathAnswerSystem.GetComponent<MathAnswerSystem>();
+        var yarnValues = GameObject.Find("StoryDataManager");
+        problems = yarnValues.GetComponent<YarnValues>();
         GenerateLevelProblems();
     }
 
-    public void UnlockTopic() {
-        topicsUnlocked++;
+    public void UnlockTopic(int num) {
+        topicsUnlocked += num;
     }
 
-    // public int GetNumTopicsUnlocked() {
-    //     return topicsUnlocked;
-    // }
+    public int GetNumTopicsUnlocked() {
+        return topicsUnlocked;
+    }
 
     private void GenerateLevelProblems() {
         var sceneName = SceneManager.GetActiveScene().name;

@@ -12,10 +12,12 @@ title: BusinessIntro
 ---
 <<if $firstConvo is false>>
     Business: Hello.
+    Business: Rect Vol is {get_piece("answer")}.
+    Business: Cylinder Vol is {get_piece2("answer")}.
     <<set $firstConvo to true>>
 <<else>>
     Business: You're back. What do you need to know?
-    // IRRIGATION PROBLEM (CURR PROBLEM (1) )
+    // IRRIGATION PROBLEM (CURR PROBLEM 1)
     -> Irrigation System
         Business: What did you want to know about the irrigation system?
         -> Give Volume

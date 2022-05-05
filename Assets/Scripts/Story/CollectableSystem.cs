@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class CollectableSystem : MonoBehaviour
 {
-    public List<GameObject> collectables;
+    public GameObject[] collectables;
 
-    void Start()
-    {
-        collectables = new List<GameObject>();
+    void Start() {
+        SetValues();
     }
 
-    // Update is called once per frame
-
-    private void AssignCollectableValues() {
-        foreach (GameObject collectable in collectables) {
-            collectable.GetComponent<Collectable>().value = 1;
+    private void SetValues() {
+        var value = (float)YarnValues.GetValue2ForYarn("answer");
+        for (int i = 0; i < collectables.Length; i++) {
+            collectables[i].GetComponent<Collectable>().ThisValue = SetupValue(value);
         }
-        // pick one collectable at random and give it the correct answer
+        collectables[Random.Range(0, collectables.Length)].GetComponent<Collectable>().ThisValue = (decimal)value;
     }
 
-    private void GetRealAnswer() {
-        
+    private decimal SetupValue(float value) {
+        // for Level 3 Wheel Problem only
+        if (Random.Range(-1f, 1f) < 0) {
+            value = (float)value - Random.Range(1f, 50f);
+        } else {
+            value = (float)value + Random.Range(1f, 50f);
+        }
+        return (decimal)value;
     }
 
-    private void GenerateFakeAnswers() {
-
+    private decimal[] CreateValueOptions() {
+        var valueOptions = new decimal[collectables.Length];
+        return valueOptions;
     }
 }
