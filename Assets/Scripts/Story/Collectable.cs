@@ -15,7 +15,6 @@ public class Collectable : MonoBehaviour
     [SerializeField] private Material transMat;
 
     void Start() {
-        Debug.Log(ThisValue);
         outline = gameObject.GetComponent<Outline>();
         outline.enabled = false;
 

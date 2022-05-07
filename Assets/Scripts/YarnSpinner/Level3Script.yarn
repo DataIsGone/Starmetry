@@ -5,7 +5,9 @@ tags:
 <<set $irrigationComplete to false>>
 <<set $wheelComplete to false>>
 
-Bribby: Hey, I'm starting from here.
+Birbby: Hey, I'm starting from here.
+//<<l3_complete>> // TODO: TEST -- REMOVE LATER
+//Birbby: End of l3_complete
 ===
 
 title: BusinessIntro
@@ -86,7 +88,7 @@ Business: Could you put the wheel on that machine there for me?
 
 // once player puts wheel on machine
 Business: Alright, starting!
-
+<<l3_complete>>
 
 // camera pans to wheel
 // wheel begins to spin
@@ -95,7 +97,7 @@ Business: Alright, starting!
 // camera pans, following star rolling off
 // camera comes back to player
 
-Bribby: After that star!
+Birbby: After that star!
 
 // player and Birbby move off screen
 ===

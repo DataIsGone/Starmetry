@@ -3,7 +3,11 @@ guid: 956113804803d44fd95a2a35e8b57b1b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - irrigationAnimator: {instanceID: 0}
+  - wheelAnimator: {instanceID: 0}
+  - wheelModel: {fileID: 919132149155446097, guid: eba756690da8a47c5ab1452f6cb5e886,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
