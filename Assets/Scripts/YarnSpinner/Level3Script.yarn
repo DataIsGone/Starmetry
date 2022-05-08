@@ -6,7 +6,7 @@ tags:
 <<set $wheelComplete to false>>
 
 Birbby: Hey, I'm starting from here.
-//<<l3_complete>> // TODO: TEST -- REMOVE LATER
+<<l3_complete>> // TODO: TEST -- REMOVE LATER
 //Birbby: End of l3_complete
 ===
 
