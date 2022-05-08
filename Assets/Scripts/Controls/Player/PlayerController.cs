@@ -51,6 +51,7 @@ public class PlayerController: MonoBehaviour
                         break;
                     case "UI":
                         // do nothing?
+                        StopPlayer();
                         break;
                     case "NPC":
                         // do nothing for now?
@@ -81,7 +82,8 @@ public class PlayerController: MonoBehaviour
     }
 
     private void ToggleSidekick() {
-        sidekick.ToggleMovementOff(env);
+        ChangeEnvironment.DisableMovement();
+        StopPlayer();
 
         // determine UI
         if (refSystem.activeSelf) {

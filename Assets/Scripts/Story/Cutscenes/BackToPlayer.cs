@@ -17,7 +17,5 @@ public class BackToPlayer : MonoBehaviour
     void Update()
     {
         SceneEvents.dummy.position = Vector3.Lerp(SceneEvents.dummy.position, v3P3, SceneEvents.speed * Time.deltaTime);
-        //Debug.Log(SceneEvents.dummy.position == v3P3);
-        //if (SceneEvents.dummy.position == v3P3) {SceneEvents.cutsceneFinished = true;}
     }
 }

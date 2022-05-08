@@ -90,13 +90,6 @@ Business: Could you put the wheel on that machine there for me?
 Business: Alright, starting!
 <<l3_complete>>
 
-// camera pans to wheel
-// wheel begins to spin
-// camera pans to irrigation box
-// irrigation box rotates
-// camera pans, following star rolling off
-// camera comes back to player
-
 Birbby: After that star!
 
 // player and Birbby move off screen

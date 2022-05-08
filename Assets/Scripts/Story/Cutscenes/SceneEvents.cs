@@ -16,7 +16,7 @@ public class SceneEvents : MonoBehaviour
     public static BackToPlayer backToPlayerCutscene;
 
     void Awake() {
-        wheelModel.SetActive(true);
+        //wheelModel.SetActive(true);
         player = GameObject.Find("Player");
         mainCam = Camera.main.GetComponent<CameraController>();
         speed = 5f;

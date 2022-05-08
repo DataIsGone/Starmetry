@@ -13,12 +13,12 @@ public class Collectable : MonoBehaviour
     private GameObject tmp;
     [SerializeField] private Material origMat;
     [SerializeField] private Material transMat;
+    private Collectable collectable;
 
-    void Start() {
+    void Awake() {
         outline = gameObject.GetComponent<Outline>();
-        outline.enabled = false;
-
         tmp = gameObject.transform.GetChild(0).GetChild(0).gameObject;
+        collectable = gameObject.GetComponent<Collectable>();
         tmp.SetActive(false);
     }
 
@@ -27,29 +27,35 @@ public class Collectable : MonoBehaviour
     }
 
     private void OnMouseOver() {
-        SetDisplayValue();
-        outline.enabled = true;
-        tmp.SetActive(true);
-    }
-
-    private void OnMouseExit() {
-        if (PlayerInventory.GetValue() == GetCollectableValue()) {
+        if (collectable != null && collectable.enabled) {
+            SetDisplayValue();
             outline.enabled = true;
             tmp.SetActive(true);
         }
-        else {
-            outline.enabled = false;
-            tmp.SetActive(false);
+    }
+
+    private void OnMouseExit() {
+        if (collectable != null && collectable.enabled) {
+            if (PlayerInventory.GetValue() == GetCollectableValue()) {
+                outline.enabled = true;
+                tmp.SetActive(true);
+            }
+            else {
+                outline.enabled = false;
+                tmp.SetActive(false);
+            }
         }
     }
 
     private void OnMouseDown() {
-        if (PlayerInventory.GetValue() != PlayerInventory.GetBaseValue()) {
-            PutBackCollectable();
-        } else {
-            SelectCollectable();
+        if (collectable != null && collectable.enabled) {
+            if (PlayerInventory.GetValue() != PlayerInventory.GetBaseValue()) {
+                PutBackCollectable();
+            } else {
+                SelectCollectable();
+            }
+            PlayerInventory.ChangeWheelStatus();
         }
-        PlayerInventory.ChangeWheelStatus();
     }
 
     private void SelectCollectable() {

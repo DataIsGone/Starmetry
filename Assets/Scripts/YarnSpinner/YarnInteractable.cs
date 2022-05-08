@@ -14,6 +14,12 @@ public class YarnInteractable : MonoBehaviour {
     private bool isCurrentConversation = false;
     private float defaultIndicatorIntensity;
 
+    private NPCTrigger npcTrigger;
+
+    void Awake() {
+        npcTrigger = gameObject.GetComponent<NPCTrigger>();
+    }
+
     public void Start() {
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
         dialogueRunner.onDialogueComplete.AddListener(EndConversation);
@@ -27,6 +33,7 @@ public class YarnInteractable : MonoBehaviour {
     }
 
     public void OnMouseDown() {
+        // && npcTrigger.GetProximity()
         if (interactable && !dialogueRunner.IsDialogueRunning) {
             StartConversation();
         }
