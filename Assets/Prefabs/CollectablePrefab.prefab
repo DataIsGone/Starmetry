@@ -347,7 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fab7e099263f42ec8b78c10c230a55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origMat: {fileID: 2100000, guid: e14ad130869dd4482bcaf7ae35158f9c, type: 2}
+  origMat0: {fileID: 2100000, guid: e87d1d187113e434cb71ad9eb9c50445, type: 2}
+  origMat1: {fileID: 2100000, guid: bde893d51f64d42bb816cd8e4a688185, type: 2}
   transMat: {fileID: 2100000, guid: 11e7c406f679b447588e800b91beb7be, type: 2}
 --- !u!114 &1196835678894668671
 MonoBehaviour:

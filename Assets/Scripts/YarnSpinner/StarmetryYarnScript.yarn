@@ -1,69 +1,22 @@
-﻿title: Start
-tags:
-position: -93,-48
----
-<<set $talkedAlready to false>> // TEST
-
-<<set $refOn to false>>
-
-Birbby: Wow!
-Birbby: Time to go talk to the NPC. Go to the right.
-
-===
-
-title: TestNPC
-position: 142,31
----
-
-<<if $talkedAlready is false>>
-    NPC: Hey! Here's a sample question.
-    <<set $talkedAlready to true>>
-<<else>>
-    NPC: Welcome back! Ready to answer?
-<<endif>>
-
-NPC: What is the area of {get_piece("length")} and {get_piece("width")}?
--> Answer Now
-    <<math_answering>>
-    <<jump AnswerNPC>>
--> I need some time
-    NPC: Alright, come talk to me again when you're ready.
-===
-
-title: AnswerNPC
----
-<<if compare(1) is true>>
-    NPC: That's correct!
-    NPC: The area of {get_piece("length")} and {get_piece("width")} is {get_piece("answer")}.
-<<else>>
-    NPC: No, unfortunately that's not correct. Try again!
-<<endif>>
-===
-
-title: AskMe
+﻿title: AskMe
 ---
 Birbby: Did you need something?
 
 <<ref_answering>>
 <<if goals() == true>>
-    <<jump PlayerGoals>>
-<<elseif ref() == true>>
-    <<if $refOn is false>>
-        Birbby: There you go. Close it yourself when you're done.
-        <<set $refOn to true>>
-    <<else>>
-        Birbby: It's up already.
+    //<<jump PlayerGoals>>
+
+    // get scene name
+    <<if scene_name() == "Level3">>
+        <<jump L3Goals>>
     <<endif>>
+<<elseif ref() == true>>
+    Birbby: Close it yourself when you're done.
+<<elseif goals() == true>>
+    <<jump L3Goals>>
 <<elseif close() == true>>
     Birbby: Changed your mind?
 <<endif>>
 
 Birbby: Talk to me if you need me again.
-
-===
-
-title: PlayerGoals
----
-
-Birbby: Here's where I'd tell you about your goals.
 ===

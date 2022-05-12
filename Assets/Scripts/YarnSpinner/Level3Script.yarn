@@ -5,9 +5,13 @@ tags:
 <<set $irrigationComplete to false>>
 <<set $wheelComplete to false>>
 
+// GOALS
+<<set $talkedToUnicorn to false>>
+<<set $allQuestionsAsked to false>>
+<<set $wheelPlaced to false>>
+
 Birbby: Hey, I'm starting from here.
-<<l3_complete>> // TODO: TEST -- REMOVE LATER
-//Birbby: End of l3_complete
+
 ===
 
 title: BusinessIntro
@@ -17,6 +21,7 @@ title: BusinessIntro
     Business: Rect Vol is {get_piece("answer")}.
     Business: Cylinder Vol is {get_piece2("answer")}.
     <<set $firstConvo to true>>
+    <<set $talkedToUnicorn to true>>
 <<else>>
     <<if $wheelComplete is true and $irrigationComplete is true>>
         <<jump CompletedLevel3>>
@@ -93,4 +98,41 @@ Business: Alright, starting!
 Birbby: After that star!
 
 // player and Birbby move off screen
+===
+
+title: L3Goals
+---
+<<if $talkedToUnicorn is false>>
+    Birbby: We should be looking around for someone to talk to.
+    Birbby: Chances are they know how to work that box thing.
+<<elseif $irrigationComplete is true and $wheelComplete is true>>
+    Birbby: We need to place that wheel on the axel.
+    Birbby: The axel is atttached to the machine.
+<<elseif $allQuestionsAsked is true>>
+    Birbby: You got all of the information you needed, right?
+    Birbby: We can take that information and solve. These are volume problems.
+    Birbby: You can talk to me if you need a reminder on how to solve those.
+    Birbby: And if you need the pieces to either problem, I'm sure you can talk to that guy again.
+    Bribby: As weird as he is.
+<<elseif $allQuestionsAsked is false>>
+    <<if $irrigationComplete is false and $wheelComplete is true>>
+        Birbby: So the last thing we need to do is figure out how much water that water box can hold.
+        Birbby: He could tell us what he knows about the machine he wants to use so badly.
+        Birbby: You know, things like how wide the box is, how long it is...
+        Birbby: Let's just talk to him.
+    <<elseif $irrigationComplete is true and $wheelComplete is false>>
+        Birbby: The last thing we need to do is help him find this water wheel because he's too lazy to do it himself.
+        Birbby: Or, you know, because he's the "idea guy". That's his "job".
+        Birbby: Anyways, it's best to talk to him to see if he knows anything about the wheel he needs.
+        Birbby: And once you know the volume of the wheel, we need to run around and find it.
+        Birbby: Might as well talk to him again. Or look for that wheel.
+    <<else>>
+        Birbby: I know he's weird, but he knows best about what he needs. At least I hope he does.
+        Birbby: Go and talk to him about the water wheel and box.
+        Birbby: You can ask him some questions to help us help him. And my stars, does this guy need help.
+    <<endif>>
+<<endif>>
+
+
+
 ===

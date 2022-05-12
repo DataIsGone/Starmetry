@@ -40,7 +40,6 @@ public class AskMe : MonoBehaviour
         dialogueTextTMP = dialogueText.GetComponent<TMPro.TextMeshProUGUI>();
 
         origWindowPos = dialogueView.transform.position;
-        //smWindowPos = new Vector3(origWindowPos.x + SM_POS_X, origWindowPos.y, origWindowPos.z);
         smWindowPos = new Vector3((origWindowPos.x + (origWindowPos.x * 0.3f)), origWindowPos.y, origWindowPos.z);
 
         origTextMargin = dialogueTextTMP.margin;
@@ -99,7 +98,6 @@ public class AskMe : MonoBehaviour
     [YarnFunction("ref")]
     public static bool OpenRef() {
         answerMode.SetActive(false);
-        Debug.Log(clickedRef);
         return clickedRef;
     }
 

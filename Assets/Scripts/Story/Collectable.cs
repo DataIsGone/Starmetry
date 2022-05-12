@@ -11,11 +11,16 @@ public class Collectable : MonoBehaviour
     }
     private Outline outline;
     private GameObject tmp;
-    [SerializeField] private Material origMat;
+    [SerializeField] private Material origMat0;
+    [SerializeField] private Material origMat1;
     [SerializeField] private Material transMat;
+    //private Material[] materials;
+    private MeshRenderer mr;
     private Collectable collectable;
 
     void Awake() {
+        mr = gameObject.GetComponent<MeshRenderer>();
+        //materials = mr.materials;
         outline = gameObject.GetComponent<Outline>();
         tmp = gameObject.transform.GetChild(0).GetChild(0).gameObject;
         collectable = gameObject.GetComponent<Collectable>();
@@ -59,12 +64,15 @@ public class Collectable : MonoBehaviour
     }
 
     private void SelectCollectable() {
-        gameObject.GetComponent<MeshRenderer>().material = transMat;
+        //gameObject.GetComponent<MeshRenderer>().material = transMat;
+        mr.materials[0] = transMat;
+        mr.materials[1] = transMat;
         PlayerInventory.SetValue(ThisValue);
     }
 
     private void PutBackCollectable() {
-        gameObject.GetComponent<MeshRenderer>().material = origMat;
+        mr.materials[0] = origMat0;
+        mr.materials[1] = origMat1;
         PlayerInventory.SetValue(PlayerInventory.GetBaseValue());
     }
 

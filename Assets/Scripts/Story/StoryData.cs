@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class StoryData : MonoBehaviour
 {
@@ -12,14 +13,26 @@ public class StoryData : MonoBehaviour
     private const string SCENE_2 = "Level2";
     private const string SCENE_3 = "Level3";
 
+    public static string currString;
+
     void Awake() {
         topicsUnlocked = 3; // TODO: TEST -- CHANGE LATER
     }
 
     void Start() {
+        currString = SceneManager.GetActiveScene().name;
         var yarnValues = GameObject.Find("StoryDataManager");
         problems = yarnValues.GetComponent<YarnValues>();
         GenerateLevelProblems();
+    }
+
+    [YarnFunction("scene_name")]
+    public static string GetSceneName() {
+        return currString;
+    }
+
+    public static void RefreshSceneName() {
+        currString = SceneManager.GetActiveScene().name;
     }
 
     public void UnlockTopic(int num) {
@@ -31,8 +44,7 @@ public class StoryData : MonoBehaviour
     }
 
     private void GenerateLevelProblems() {
-        var sceneName = SceneManager.GetActiveScene().name;
-        switch (sceneName) {
+        switch (currString) {
             case SCENE_1:
                 problems.AssignCurrProblem("angle");
                 break;
