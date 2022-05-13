@@ -4,13 +4,23 @@ tags:
 <<set $firstConvo to false>>
 <<set $irrigationComplete to false>>
 <<set $wheelComplete to false>>
+<<set $qIrrigation1 to false>>
+<<set $qIrrigation2 to false>>
+<<set $qIrrigation3 to false>>
+<<set $qIrrigationAll to false>>
+<<set $firstAskIrrigation to true>>
+<<set $qWheel1 to false>>
+<<set $qWheel2 to false>>
+<<set $qWheel3 to false>>
+<<set $qWheelAll to false>>
+<<set $firstAskWheel to true>>
 
 // GOALS
 <<set $talkedToUnicorn to false>>
 <<set $allQuestionsAsked to false>>
 <<set $wheelPlaced to false>>
 
-Birbby: Hey, I'm starting from here.
+Birbby: (starting level 3)
 
 ===
 
@@ -29,26 +39,73 @@ title: BusinessIntro
         Business: You're back. What do you need to know?
         // IRRIGATION PROBLEM (CURR PROBLEM 1)
         -> Irrigation System
-            Business: What did you want to know about the irrigation system?
-            -> Give Volume
-                Business: You know how much water it can hold?
-                <<math_answering>>
-                <<jump AnsweringIrrigation>>
+            <<jump IrrigationQuestions>>
         // WATER WHEEL PROBLEM (CURR PROBLEM 2)
         -> Water Wheel
-            Business: What did you want to ask about the water wheel?
-            -> Give Wheel <<if check_has_wheel() is true>>
-                <<jump AnsweringWaterWheel>>
-            -> Question 1
-                Business: Answer to Question 1
-            -> Question 2
-                Business: Answer to Question 2
-            -> Question 3
-                Business: Answer to Question 3
+            <<jump WaterWheelQuestions>>
         -> Nevermind
             Business: Get back to it.
     <<endif>>
 <<endif>>
+===
+
+title: WaterWheelQuestions
+---
+<<if $qWheel1 is true and $qWheel2 is true and $qWheel3 is true>>
+    <<set $qWheelAll to true>>
+<<endif>>
+<<if $firstAskWheel is true>>
+    Business: What did you want to ask about the water wheel?
+    <<set $firstAskWheel to false>>
+<<else>>
+    Business: Anything else?
+<<endif>>
+-> Give Wheel <<if check_has_wheel() is true and $qWheelAll is true>>
+    <<jump AnsweringWaterWheel>>
+-> Wheel Question 1
+    Business: Answer to Wheel Question 1
+    <<jump WaterWheelQuestions>>
+-> Wheel Question 2
+    Business: Answer to Wheel Question 2
+    <<jump WaterWheelQuestions>>
+-> Wheel Question 3
+    Business: Answer to Wheel Question 3
+    <<jump WaterWheelQuestions>>
+-> Nevermind
+    Businesss: Get to it.
+    <<set $firstAskWheel to true>>
+===
+
+title: IrrigationQuestions
+---
+<<if $qIrrigation1 is true and $qIrrigation2 is true and $qIrrigation3 is true>>
+    <<set $qIrrigationAll to true>>
+<<endif>>
+<<if $firstAskIrrigation is true>>
+    Business: What did you want to know about the irrigation system?
+    <<set $firstAskIrrigation to false>>
+<<else>>
+    Business: Anything else?
+<<endif>>
+    -> Give Volume <<if $qIrrigationAll is true>> 
+        Business: You know how much water it can hold?
+        <<math_answering>>
+        <<jump AnsweringIrrigation>>
+    -> Irrigation Question 1
+        Business: Answer to Irrigation Question 1
+        <<set $qIrrigation1 to true>>
+        <<jump IrrigationQuestions>>
+    -> Irrigation Question 2
+        Business: Answer to Irrigation Question 2
+        <<set $qIrrigation2 to true>>
+        <<jump IrrigationQuestions>>
+    -> Irrigation Question 3
+        Business: Answer to Irrigation Question 3
+        <<set $qIrrigation3 to true>>
+        <<jump IrrigationQuestions>>
+    -> Nevermind
+        Business: Get back to it.
+        <<set $firstAskIrrigation to true>>
 ===
 
 title: AnsweringWaterWheel
@@ -132,7 +189,4 @@ title: L3Goals
         Birbby: You can ask him some questions to help us help him. And my stars, does this guy need help.
     <<endif>>
 <<endif>>
-
-
-
 ===

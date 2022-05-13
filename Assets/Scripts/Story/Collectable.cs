@@ -14,15 +14,13 @@ public class Collectable : MonoBehaviour
     [SerializeField] private Material origMat0;
     [SerializeField] private Material origMat1;
     [SerializeField] private Material transMat;
-    //private Material[] materials;
     private MeshRenderer mr;
     private Collectable collectable;
 
     void Awake() {
         mr = gameObject.GetComponent<MeshRenderer>();
-        //materials = mr.materials;
         outline = gameObject.GetComponent<Outline>();
-        tmp = gameObject.transform.GetChild(0).GetChild(0).gameObject;
+        tmp = gameObject.transform.parent.GetChild(1).GetChild(0).gameObject;
         collectable = gameObject.GetComponent<Collectable>();
         tmp.SetActive(false);
     }
@@ -37,6 +35,10 @@ public class Collectable : MonoBehaviour
             outline.enabled = true;
             tmp.SetActive(true);
         }
+        else {
+            outline.enabled = false;
+            tmp.SetActive(false);
+        }
     }
 
     private void OnMouseExit() {
@@ -50,9 +52,15 @@ public class Collectable : MonoBehaviour
                 tmp.SetActive(false);
             }
         }
+        else {
+            outline.enabled = false;
+            tmp.SetActive(false);
+        }
     }
 
     private void OnMouseDown() {
+        //Debug.Log("collectable != null: " + collectable != null);
+        //Debug.Log("collectable.enabled: " + collectable.enabled);
         if (collectable != null && collectable.enabled) {
             if (PlayerInventory.GetValue() != PlayerInventory.GetBaseValue()) {
                 PutBackCollectable();
@@ -65,8 +73,13 @@ public class Collectable : MonoBehaviour
 
     private void SelectCollectable() {
         //gameObject.GetComponent<MeshRenderer>().material = transMat;
+
+        // Debug.Log("Orig 0: " + mr.materials[0].name);
+        // Debug.Log("Orig 1: " + mr.materials[1].name);
         mr.materials[0] = transMat;
         mr.materials[1] = transMat;
+        // Debug.Log("Changed 0: " + mr.materials[0].name);
+        // Debug.Log("Changed 1: " + mr.materials[1].name);
         PlayerInventory.SetValue(ThisValue);
     }
 

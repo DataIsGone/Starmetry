@@ -59,7 +59,7 @@ public class PlayerController: MonoBehaviour
                         break;
                     case "Collectable":
                         // invoke collectable
-                        StopPlayer();
+                        //StopPlayer();
                         break;
                     default:
                         MovePlayer();

@@ -13,23 +13,19 @@ public class CollectableSystem : MonoBehaviour
     private void SetValues() {
         var value = (float)YarnValues.GetValue2ForYarn("answer");
         for (int i = 0; i < collectables.Length; i++) {
-            collectables[i].GetComponent<Collectable>().ThisValue = SetupValue(value);
+            var wheelObject = collectables[i].transform.GetChild(0).gameObject;
+            wheelObject.GetComponent<Collectable>().ThisValue = SetupValue(value);
         }
-        collectables[Random.Range(0, collectables.Length)].GetComponent<Collectable>().ThisValue = (decimal)value;
+        collectables[Random.Range(0, collectables.Length)].transform.GetChild(0).gameObject.GetComponent<Collectable>().ThisValue = (decimal)value;
     }
 
     private decimal SetupValue(float value) {
         // for Level 3 Wheel Problem only
         if (Random.Range(-1f, 1f) < 0) {
-            value = (float)value - Random.Range(1f, 50f);
+            value = Mathf.Abs((float)System.Math.Round((float)value - Random.Range(1f, 50f), 2));
         } else {
-            value = (float)value + Random.Range(1f, 50f);
+            value = Mathf.Abs((float)System.Math.Round((float)value + Random.Range(1f, 50f), 2));
         }
         return (decimal)value;
-    }
-
-    private decimal[] CreateValueOptions() {
-        var valueOptions = new decimal[collectables.Length];
-        return valueOptions;
     }
 }
