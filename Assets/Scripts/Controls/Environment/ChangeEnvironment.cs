@@ -13,9 +13,9 @@ public class ChangeEnvironment : MonoBehaviour
     const string BRIDGE = "Bridge";
 
     void Start() {
-        envObject = GameObject.Find(ENV).transform.GetChild(0).gameObject;
-        rampObject = GameObject.Find(RAMP).transform.GetChild(0).gameObject;
-        bridgeObject = GameObject.Find(BRIDGE).transform.GetChild(0).gameObject;
+        envObject = GameObject.Find(ENV).gameObject;
+        rampObject = GameObject.Find(RAMP).gameObject;
+        bridgeObject = GameObject.Find(BRIDGE).gameObject;
     }
 
     public static void DisableMovement() {
