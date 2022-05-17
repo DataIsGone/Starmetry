@@ -13,6 +13,6 @@ public class PaperStyle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = new Quaternion(-180, 0, 0, 180);
+        transform.rotation = new Quaternion(0, 0, 0, 180);
     }
 }
