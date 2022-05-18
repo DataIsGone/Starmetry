@@ -9,7 +9,7 @@ public class FollowPlayer : MonoBehaviour
     float distance;
     public float minDistance = 1.75f;
 
-    void Update()
+    void FixedUpdate()
     {
         distance = Vector3.Distance(player.transform.position, transform.position);
         if (distance >= minDistance) {

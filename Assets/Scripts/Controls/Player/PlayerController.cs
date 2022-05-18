@@ -8,32 +8,28 @@ public class PlayerController: MonoBehaviour
 
     public Camera cam;
     public UnityEngine.AI.NavMeshAgent player;
-    // public Animator playerAnimator;
+    public Animator playerAnimator;
+    public Animator sidekickAnimator;
     public GameObject targetDest;
     public GameObject refUI;
     [SerializeField] private GameObject refSystem;
     public AskMe sidekick;
     private Ray ray;
+    private Ray prevRay;
     private RaycastHit hitPoint;
     [SerializeField] private GameObject env;
+    public SpriteRenderer playerSpriteRenderer;
+    public SpriteRenderer sidekickSpriteRenderer;
 
     void Awake() {
+        prevRay = new Ray(player.transform.position, player.transform.position);
         refUI.SetActive(false);
-    }
-
-    void Start() {
-        
     }
 
     void Update()
     {
-
-
-        // if (player.velocity != Vector3.zero) {
-        //     playerAnimator.SetBool("isWalking", true);
-        // } else {
-        //     playerAnimator.SetBool("isWalking", false);
-        // }
+        SetCurrSprite();
+        //FindSpriteZDirection();
         DetermineClick();
     }
 
@@ -59,20 +55,62 @@ public class PlayerController: MonoBehaviour
                         break;
                     case "Collectable":
                         // invoke collectable
-                        //StopPlayer();
                         break;
                     default:
                         MovePlayer();
                         break;
                 }
+                prevRay = ray;
             }
         }
     }
 
     private void MovePlayer() {
+        FlipSprite();
         targetDest.transform.position = hitPoint.point;
         targetDest.SetActive(true); // Make target marker appear again after clicking
         player.SetDestination(hitPoint.point);
+    }
+
+    private void FlipSprite() {
+        if (ray.direction.x > 0) {
+            playerSpriteRenderer.flipX = true;
+            sidekickSpriteRenderer.flipX = true;
+        }
+        else {
+            playerSpriteRenderer.flipX = false;
+            sidekickSpriteRenderer.flipX = false;
+        }
+    }
+
+    // private void FindSpriteZDirection() {
+    //     Debug.Log("ray: " + ray);
+    //     Debug.Log("prevRay: " + prevRay);
+    //     Debug.Log(ray.direction.z <= prevRay.direction.z);
+    //     if (ray.direction.z < prevRay.direction.z) {
+    //         playerAnimator.SetBool("isFacingAway", false);
+    //     }
+    //     else {
+    //         playerAnimator.SetBool("isFacingAway", true);
+    //     }
+    // }
+
+    private void SetCurrSprite() {
+        if (player.velocity != Vector3.zero) {
+            SetMovingSprite();
+        } else {
+            SetIdlingSprite();
+        }
+    }
+
+    private void SetMovingSprite() {
+        playerAnimator.SetBool("isMoving", true);
+        sidekickAnimator.SetBool("playerMoving", true);
+    }
+
+    private void SetIdlingSprite() {
+        playerAnimator.SetBool("isMoving", false);
+        sidekickAnimator.SetBool("playerMoving", false);
     }
 
     public void StopPlayer() {

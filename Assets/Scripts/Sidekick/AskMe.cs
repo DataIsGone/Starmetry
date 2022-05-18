@@ -56,7 +56,6 @@ public class AskMe : MonoBehaviour
         clickedClose = true;
         playerAnswered = true;
         answerMode.SetActive(false);
-        //ChangeEnvironment.EnableMovement();
     }
 
     public void OpenScrollWindow() {
