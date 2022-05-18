@@ -12,7 +12,10 @@ public class FollowPlayer : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector3.Distance(player.transform.position, transform.position);
-        if (distance >= minDistance) {
+        if (distance > 5.0f) {
+            resetPosition();
+        }
+        else if (distance >= minDistance) {
             var step = speed * Time.fixedDeltaTime;
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
         }

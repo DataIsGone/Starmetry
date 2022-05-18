@@ -72,20 +72,18 @@ public class Collectable : MonoBehaviour
     }
 
     private void SelectCollectable() {
-        //gameObject.GetComponent<MeshRenderer>().material = transMat;
-
-        // Debug.Log("Orig 0: " + mr.materials[0].name);
-        // Debug.Log("Orig 1: " + mr.materials[1].name);
-        mr.materials[0] = transMat;
-        mr.materials[1] = transMat;
+        mr.materials[0].color = Color.red;
+        mr.materials[1].color = Color.red;
         // Debug.Log("Changed 0: " + mr.materials[0].name);
         // Debug.Log("Changed 1: " + mr.materials[1].name);
         PlayerInventory.SetValue(ThisValue);
     }
 
     private void PutBackCollectable() {
-        mr.materials[0] = origMat0;
-        mr.materials[1] = origMat1;
+        // mr.materials[0] = origMat0;
+        // mr.materials[1] = origMat1;
+        mr.materials[0].color = Color.white;
+        mr.materials[1].color = Color.white;
         PlayerInventory.SetValue(PlayerInventory.GetBaseValue());
     }
 
