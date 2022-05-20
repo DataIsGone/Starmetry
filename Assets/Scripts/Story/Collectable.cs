@@ -70,8 +70,8 @@ public class Collectable : MonoBehaviour
     }
 
     private void SelectCollectable() {
-        mr.materials[0].color = Color.red;
-        mr.materials[1].color = Color.red;
+        mr.materials[0].color = Color.clear;
+        mr.materials[1].color = Color.clear;
         PlayerInventory.SetValue(ThisValue);
     }
 

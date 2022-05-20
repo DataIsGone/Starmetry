@@ -15,8 +15,11 @@ public class SceneEvents : MonoBehaviour
     public static FollowBall followBallCutscene;
     public static BackToPlayer backToPlayerCutscene;
 
+    public static bool catalystL3;
+
     void Awake() {
-        //wheelModel.SetActive(true);
+        catalystL3 = false;
+
         player = GameObject.Find("Player");
         mainCam = Camera.main.GetComponent<CameraController>();
         speed = 5f;
@@ -30,10 +33,14 @@ public class SceneEvents : MonoBehaviour
 
     void Start() {
         dummy = GameObject.Find("CamDummy").transform;
-
         wheelSpinCutscene.enabled = false;
         followBallCutscene.enabled = false;
         backToPlayerCutscene.enabled = false;
+    }
+
+    [YarnCommand("l3_catalyst")]
+    static bool CheckWheel() {
+        return catalystL3;
     }
 
     [YarnCommand("l3_complete")]

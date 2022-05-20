@@ -14,6 +14,7 @@ tags:
 <<set $qWheel3 to false>>
 <<set $qWheelAll to false>>
 <<set $firstAskWheel to true>>
+<<set $firstAskComplete to true>>
 
 // GOALS
 <<set $talkedToUnicorn to false>>
@@ -37,7 +38,7 @@ title: BusinessIntro
     <<else>>
         Business: You're back. What do you need to know?
         // IRRIGATION PROBLEM (CURR PROBLEM 1)
-        -> Irrigation System
+        -> Water Box
             <<jump IrrigationQuestions>>
         // WATER WHEEL PROBLEM (CURR PROBLEM 2)
         -> Water Wheel
@@ -142,14 +143,17 @@ title: AnsweringIrrigation
 
 title: CompletedLevel3
 ---
-Business: Oh WOW. You actually did it.
-Business: I'll start up the irrigation machine.
-Business: Well, actually...
-Business: Could you put the wheel on that machine there for me?
-
-// once player puts wheel on machine
-Business: Alright, starting!
-<<l3_complete>>
+<<if $firstAskComplete is true>>
+    Business: Oh WOW. You actually did it.
+    Business: I'll start up the irrigation machine.
+    Business: Well, actually...
+    <<set $firstAskComplete to false>>
+<<endif>>
+    Business: Could you put the wheel on the machine for me?
+<<if l3_catalyst() is true>>
+    Business: Alright, starting!
+    <<l3_complete>>
+<<endif>>
 
 Birbby: After that star!
 

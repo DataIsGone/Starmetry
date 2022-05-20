@@ -30,6 +30,7 @@ public class PlayerInventory : MonoBehaviour
 
     [YarnFunction("check_has_wheel")]
     public static bool GetWheelStatus() {
+        Debug.Log(hasWheel);
         return hasWheel;
     }
 
