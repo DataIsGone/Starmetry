@@ -15,21 +15,18 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private GameObject refSystem;
     public AskMe sidekick;
     private Ray ray;
-    private Ray prevRay;
     private RaycastHit hitPoint;
     [SerializeField] private GameObject env;
     public SpriteRenderer playerSpriteRenderer;
     public SpriteRenderer sidekickSpriteRenderer;
 
     void Awake() {
-        prevRay = new Ray(player.transform.position, player.transform.position);
         refUI.SetActive(false);
     }
 
     void Update()
     {
         SetCurrSprite();
-        //FindSpriteZDirection();
         DetermineClick();
     }
 
@@ -60,7 +57,6 @@ public class PlayerController: MonoBehaviour
                         MovePlayer();
                         break;
                 }
-                prevRay = ray;
             }
         }
     }
@@ -82,18 +78,6 @@ public class PlayerController: MonoBehaviour
             sidekickSpriteRenderer.flipX = false;
         }
     }
-
-    // private void FindSpriteZDirection() {
-    //     Debug.Log("ray: " + ray);
-    //     Debug.Log("prevRay: " + prevRay);
-    //     Debug.Log(ray.direction.z <= prevRay.direction.z);
-    //     if (ray.direction.z < prevRay.direction.z) {
-    //         playerAnimator.SetBool("isFacingAway", false);
-    //     }
-    //     else {
-    //         playerAnimator.SetBool("isFacingAway", true);
-    //     }
-    // }
 
     private void SetCurrSprite() {
         if (player.velocity != Vector3.zero) {

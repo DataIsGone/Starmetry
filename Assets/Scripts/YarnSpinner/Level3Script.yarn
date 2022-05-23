@@ -11,7 +11,6 @@ tags:
 <<set $firstAskIrrigation to true>>
 <<set $qWheel1 to false>>
 <<set $qWheel2 to false>>
-<<set $qWheel3 to false>>
 <<set $qWheelAll to false>>
 <<set $firstAskWheel to true>>
 <<set $firstAskComplete to true>>
@@ -21,22 +20,131 @@ tags:
 <<set $allQuestionsAsked to false>>
 <<set $wheelPlaced to false>>
 
-Birbby: (starting level 3)
+<<birbby_talk>>
+Birbby: Ugh. Where are we now?
+<<birbby_shutup>>
+<<wait 2.0>>
+<<birbby_talk>>
+Birbby: Wait. Look up there.
+//<<pan to star in box>>
+Birbby: This whole thing just keeps getting better.
+Birbby: I have no idea how we're going to get that down.
+Birbby: I want to go home. I really do.
+Birbby: But I...
+<<birbby_shutup>>
+<<wait 2.0>>
+<<birbby_talk>>
+Birbby: Err. WE have to finish delivering this star.
+<<birbby_shutup>>
+<<wait 1.0>>
+<<birbby_talk>>
+Birbby: Let's look around and see if we can find anything at all to help us.
+<<birbby_shutup>>
 ===
 
 title: BusinessIntro
 ---
 <<if $firstConvo is false>>
-    Business: Hello.
-    Business: Rect Vol is {get_piece("answer")}.
-    Business: Cylinder Vol is {get_piece2("answer")}.
+    //Bronicorn: Rect Vol is {get_piece("answer")}.
+    //Bronicorn: Cylinder Vol is {get_piece2("answer")}.
+
+    <<bro_talk>>
+    Bronicorn: Good morning.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: ... "Good morning"? Doesn't look like morning to me.
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: It's a good morning, I'm picking myself up. I'm getting back on my feet.
+    Bronicorn: Doesn't matter if the world is bleak. What matters is you keep hustling.
+    Bronicorn: Losing all of my money is not the end of the world.
+    <<bro_shutup>>
+    <<wait 1.0>>
+    <<birbby_talk>>
+    Birbby: Well, good for you. We need some help. Something of ours got stuck in that box thing up there.
+    Birbby: It looks like it's a part of this machine. Do you know what any of this is?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: I do. It's mine. A new venture. Unlimited possibilities.
+    Bronicorn: It's been abandoned. Finders keepers.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: So, what is it?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: A generator. I need more energy for my graphics card-generated random numbers.
+    Bronicorn: Preferably energy that's off-grid. I'm "boiling oceans" apparently.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: ...what? How does that even work?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: It's an undershot water wheel generator. I'm using green energy so I can make some money.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: How is a water wheel supposed to help you with graphics cards?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Look it up. You'll understand one day.
+    <<bro_shutup>>
+    <<wait 1.0>>
+    <<birbby_talk>>
+    Birbby: Can you just help us get our star back?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: The ball in that water basin?
+    Bronicorn: You're saying it's a star that fell from the sky but managed to land in an old glass box without breaking it?
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Look it up. You'll understand one day.
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Weak mental. Not gonna make it.
+    <<bro_shutup>>
+    <<wait 1.0>>
+    <<bro_talk>>
+    Bronicorn: Look, I'll help you get your ball down if you do me two favors.
+    Bronicorn: My water wheel generator is obviously missing a wheel. Can't generate any energy without one.
+    Bronicorn: If you can find me a wheel that works with this river...
+    Bronicorn: I can turn on the generator so the water container releases your ball.
+    Bronicorn: There are some wheels around here that I haven't checked out yet. Take a look at those and show me one you think will fit.
+    Bronicorn: On that note, I also want to know how much water that container can hold.
+    Bronicorn: It could be useful for something else after I take it down.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Can't you just take it down now?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Can't you take it down yourself?
+    Bronicorn: Can you even reach it?
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: You know more about this thing than we do. And don't make fun of my size.
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Sure. It's easier to get it down if we power on the generator anyways.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Gotcha. So we need to get you the volume of the container and the wheel?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: You do what you gotta do to help me. It's a bear market right now.
+    <<bro_shutup>>
+    <<wait 1.0>>
+    <<bro_talk>>
+    Bronicorn: Talk to me if you have any questions, I can share what I already know.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Alright, will do.
+    <<birbby_shutup>>
+
     <<set $firstConvo to true>>
     <<set $talkedToUnicorn to true>>
 <<else>>
     <<if $wheelComplete is true and $irrigationComplete is true>>
         <<jump CompletedLevel3>>
     <<else>>
-        Business: You're back. What do you need to know?
+        Bronicorn: You're back. What do you need to know?
         // IRRIGATION PROBLEM (CURR PROBLEM 1)
         -> Water Box
             <<jump IrrigationQuestions>>
@@ -44,35 +152,70 @@ title: BusinessIntro
         -> Water Wheel
             <<jump WaterWheelQuestions>>
         -> Nevermind
-            Business: Get back to it.
+            <<bro_talk>>
+            Bronicorn: Get back to it.
+            <<bro_shutup>>
     <<endif>>
 <<endif>>
 ===
 
 title: WaterWheelQuestions
 ---
-<<if $qWheel1 is true and $qWheel2 is true and $qWheel3 is true>>
+<<if $qWheel1 is true and $qWheel2 is true>>
     <<set $qWheelAll to true>>
 <<endif>>
 <<if $firstAskWheel is true>>
-    Business: What did you want to ask about the water wheel?
+    <<birbby_talk>>
+    Birbby: About this water box...
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Sure, ask away.
+    <<bro_shutup>>
     <<set $firstAskWheel to false>>
 <<else>>
-    Business: Anything else?
+    Bronicorn: Anything else?
 <<endif>>
--> Give Wheel <<if check_has_wheel() is true and $qWheelAll is true>>
+-> Offer Wheel <<if check_has_wheel() is true and $qWheelAll is true>>
     <<jump AnsweringWaterWheel>>
--> Wheel Question 1
-    Business: Answer to Wheel Question 1
+
+// CYLINDER HEIGHT
+-> The river?
+    <<bro_talk>>
+    Bronicorn: What do I know about the river, huh?
+    Bronicorn: Not much. But we move fast.
+    Bronicorn: The river is about {get_piece2("cynHeight")} feet wide.
+    <<bro_shutup>>
+    <<wait 1.0>>
+    <<bro_talk>>
+    Bronicorn: We'll touch base later with more river info.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: That's fine for now actually.
+    <<birbby_shutup>>
     <<jump WaterWheelQuestions>>
--> Wheel Question 2
-    Business: Answer to Wheel Question 2
+    <<set $qWheel1 to true>>
+
+// CYLINDER RADIUS
+-> The wheel's size?
+    <<bro_talk>>
+    Bronicorn: How big does the wheel need to be?
+    Bronicorn: It needs to reach the river from that axle sticking out. You can see it from the pier near the generator.
+    Bronicorn: Distance from the axle to the river is {get_piece2("radius")} feet.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: That doesn't seem too bad.
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: We're all gonna make it.
+    <<bro_shutup>>
     <<jump WaterWheelQuestions>>
--> Wheel Question 3
-    Business: Answer to Wheel Question 3
-    <<jump WaterWheelQuestions>>
+    <<set $qWheel2 to true>>
+
+// NEVERMIND
 -> Nevermind
-    Businesss: Get to it.
+    <<bro_talk>>
+    Bronicorns: Back at it then.
+    <<bro_shutup>>
     <<set $firstAskWheel to true>>
 ===
 
@@ -82,80 +225,182 @@ title: IrrigationQuestions
     <<set $qIrrigationAll to true>>
 <<endif>>
 <<if $firstAskIrrigation is true>>
-    Business: What did you want to know about the irrigation system?
+    <<birbby_talk>>
+    Birbby: About this water box...
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Sure, ask away.
+    <<bro_shutup>>
     <<set $firstAskIrrigation to false>>
 <<else>>
-    Business: Anything else?
+    Bronicorn: Anything else?
 <<endif>>
-    -> Give Volume <<if $qIrrigationAll is true>> 
-        Business: You know how much water it can hold?
-        <<math_answering>>
-        <<jump AnsweringIrrigation>>
-    -> Irrigation Question 1
-        Business: Answer to Irrigation Question 1
-        <<set $qIrrigation1 to true>>
-        <<jump IrrigationQuestions>>
-    -> Irrigation Question 2
-        Business: Answer to Irrigation Question 2
-        <<set $qIrrigation2 to true>>
-        <<jump IrrigationQuestions>>
-    -> Irrigation Question 3
-        Business: Answer to Irrigation Question 3
-        <<set $qIrrigation3 to true>>
-        <<jump IrrigationQuestions>>
-    -> Nevermind
-        Business: Get back to it.
-        <<set $firstAskIrrigation to true>>
+
+-> Give Volume <<if $qIrrigationAll is true>> 
+    <<bro_talk>>
+    Bronicorn: You know how much water it can hold?
+    <<bro_shutup>>
+    <<math_answering>>
+    <<jump AnsweringIrrigation>>
+
+// RECT. PRISM WIDTH
+-> How wide?
+    <<bro_talk>>
+    Bronicorn: How wide is the box?
+    Bronicorn: If you didn't see, there's some dirt underneath. Kinda shaped like a trough.
+    Bronicorn: I'm guessing someone wanted to pour water from the box and grow some plants in that.
+    Bronicorn: It's {get_piece("width")} feet wide from what I measured earlier.
+    Bronicorn: Gotta get rid of it later.
+    <<bro_shutup>>
+    <<set $qIrrigation1 to true>>
+    <<jump IrrigationQuestions>>
+
+// RECT. PRISM HEIGHT
+-> How tall?
+    <<bro_talk>>
+    Bronicorn: "How tall?"" I can't reach that thing.
+    Bronicorn: I did find a similar glass box lying around here somewhere. I measured it. It's {get_piece("rectHeight")} feet in height.
+    Bronicorn: I tossed it out though.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: You threw it out and before you figured out the volume of it yourself? And now you're making us do it?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Burnout happens when you work too much. Mistakes happen with burnout.
+    Bronicorn: I don't want this to be the cycle that ends all cycles for me.
+    <<bro_shutup>>
+    <<set $qIrrigation2 to true>>
+    <<jump IrrigationQuestions>>
+
+// RECT. PRISM LENGTH
+-> How long?
+    <<bro_talk>>
+    Bronicorn: Glance I thought this was gonna be a cube. But it's not.
+    Bronicorn: The other glass box I found earlier was about {get_piece("length")} feet long.
+    <<bro_shutup>>
+    <<wait 1.0>>
+    <<birbby_talk>>
+    Birbby: ...wait. You saw another box lying around? On the ground? Where you can REACH IT?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Next question please.
+    <<bro_shutup>>
+    <<set $qIrrigation3 to true>>
+    <<jump IrrigationQuestions>>
+
+// NEVERMIND
+-> Nevermind
+    <<bro_talk>>
+    Bronicorn: Get back to it.
+    <<bro_shutup>>
+    <<set $firstAskIrrigation to true>>
 ===
 
 title: AnsweringWaterWheel
 ---
-Business: You found a wheel that works for me?
+<<bro_talk>>
+Bronicorn: You found a wheel that works for me?
+<<bro_shutup>>
 <<if compare(2) is true>>
-    Business: That's the correct one!
+    <<bro_talk>>
+    Business: This'll work. Great work. Hold on to that for me.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Wait, seriously?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Business: You're gonna need to put it on the axle for me.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Ugh, this guy…
+    <<birbby_shutup>>
     <<set $wheelComplete to true>>
     <<if $wheelComplete is true and $irrigationComplete is true>>
         <<jump CompletedLevel3>>
     <<else>>
-        Business: What about the irrigation box?
+        <<bro_talk>>
+        Business: The only thing left is figuring out how much water that glass box can hold.
+        <<bro_shutup>>
     <<endif>>
 <<else>>
-    Business: I don't think that's the right wheel.
-    Business: Why don't you put that one back where you found it?
-    Business: And come back to me with a different one!
+    <<bro_talk>>
+    Business: I don't think this wheel will work.
+    Business: Why don't you put it back where you found it? Then you can pick up a new one.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Seriously?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Business: I don't make the rules.
+    <<bro_shutup>>
 <<endif>>
 ===
 
 title: AnsweringIrrigation
 ---
 <<if compare(1) is true>>
-    Business: Oh, that's how much water it can hold...
+    <<bro_talk>>
+    Bronicorn: That makes sense. I also arrived at {get_piece("answer")} feet.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Seriously? You solved it yourself?
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Doesn't hurt to double check.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Show us your work.
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: That'll take too long.
+    <<bro_shutup>>
     <<set $irrigationComplete to true>>
     <<if $wheelComplete is true and $irrigationComplete is true>>
         <<jump CompletedLevel3>>
     <<else>>
-        Business: Can you help me with the wheel now?
+        Bronicorn: Besides, we have a water wheel to find!
+        Birbby: "We" as in not you.
+        Bronicorn: Godspeed.
     <<endif>>
 <<else>>
-    Business: That doesn't sound correct to me.
+    Bronicorn: That doesn't sound correct to me.
 <<endif>>
 ===
 
 title: CompletedLevel3
 ---
 <<if $firstAskComplete is true>>
-    Business: Oh WOW. You actually did it.
-    Business: I'll start up the irrigation machine.
-    Business: Well, actually...
+    <<birbby_talk>>
+    Birbby: We're done now.
+    <<birbby_shutup>>
+    <<bro_talk>>
+    Bronicorn: Oh wow. You actually did it.
+    <<bro_shutup>>
+    <<birbby_talk>>
+    Birbby: Did you doubt us?
+    <<birbby_shutup>>
+    <<wait 1.0>>
+    <<bro_talk>>
+    Bronicorn: Alright. Go ahead and put the wheel on the axle.
+    Bronicorn: You can reach it using the pier next to me.
+    <<bro_shutup>>
     <<set $firstAskComplete to false>>
 <<endif>>
-    Business: Could you put the wheel on the machine for me?
+    <<bro_talk>>
+    Bronicorn: Did you put the wheel on the axle yet?
+    Bronicorn: You can reach it using the pier next to me.
+    <<bro_shutup>>
 <<if l3_catalyst() is true>>
-    Business: Alright, starting!
+    <<bro_talk>>
+    Bronicorn: Alright, starting!
+    <<bro_shutup>>
     <<l3_complete>>
 <<endif>>
 
-Birbby: After that star!
+<<birbby_talk>>
+Birbby: Finally! After it!
+Birbby: Later NERD.
+<<birbby_shutup>>
 
 // player and Birbby move off screen
 ===
@@ -163,33 +408,45 @@ Birbby: After that star!
 title: L3Goals
 ---
 <<if $talkedToUnicorn is false>>
+    <<birbby_talk>>
     Birbby: We should be looking around for someone to talk to.
     Birbby: Chances are they know how to work that box thing.
+    <<birbby_shutup>>
 <<elseif $irrigationComplete is true and $wheelComplete is true>>
+    <<birbby_talk>>
     Birbby: We need to place that wheel on the axel.
     Birbby: The axel is atttached to the machine.
+    <<birbby_shutup>>
 <<elseif $allQuestionsAsked is true>>
+    <<birbby_talk>>
     Birbby: You got all of the information you needed, right?
     Birbby: We can take that information and solve. These are volume problems.
     Birbby: You can talk to me if you need a reminder on how to solve those.
     Birbby: And if you need the pieces to either problem, I'm sure you can talk to that guy again.
-    Bribby: As weird as he is.
+    Birbby: As weird as he is.
+    <<birbby_shutup>>
 <<elseif $allQuestionsAsked is false>>
     <<if $irrigationComplete is false and $wheelComplete is true>>
+        <<birbby_talk>>
         Birbby: So the last thing we need to do is figure out how much water that water box can hold.
         Birbby: He could tell us what he knows about the machine he wants to use so badly.
         Birbby: You know, things like how wide the box is, how long it is...
         Birbby: Let's just talk to him.
+        <<birbby_shutup>>
     <<elseif $irrigationComplete is true and $wheelComplete is false>>
+        <<birbby_talk>>
         Birbby: The last thing we need to do is help him find this water wheel because he's too lazy to do it himself.
         Birbby: Or, you know, because he's the "idea guy". That's his "job".
         Birbby: Anyways, it's best to talk to him to see if he knows anything about the wheel he needs.
         Birbby: And once you know the volume of the wheel, we need to run around and find it.
         Birbby: Might as well talk to him again. Or look for that wheel.
+        <<birbby_shutup>>
     <<else>>
+        <<birbby_talk>>
         Birbby: I know he's weird, but he knows best about what he needs. At least I hope he does.
         Birbby: Go and talk to him about the water wheel and box.
         Birbby: You can ask him some questions to help us help him. And my stars, does this guy need help.
+        <<birbby_shutup>>
     <<endif>>
 <<endif>>
 ===

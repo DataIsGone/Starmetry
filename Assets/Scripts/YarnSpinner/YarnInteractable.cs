@@ -14,12 +14,6 @@ public class YarnInteractable : MonoBehaviour {
     private bool isCurrentConversation = false;
     private float defaultIndicatorIntensity;
 
-    private NPCTrigger npcTrigger;
-
-    void Awake() {
-        npcTrigger = gameObject.GetComponent<NPCTrigger>();
-    }
-
     public void Start() {
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
         dialogueRunner.onDialogueComplete.AddListener(EndConversation);
@@ -33,7 +27,6 @@ public class YarnInteractable : MonoBehaviour {
     }
 
     public void OnMouseDown() {
-        // && npcTrigger.GetProximity()
         if (interactable && !dialogueRunner.IsDialogueRunning) {
             StartConversation();
         }
@@ -42,17 +35,24 @@ public class YarnInteractable : MonoBehaviour {
     private void StartConversation() {
         Debug.Log($"Started conversation with {name}.");
         isCurrentConversation = true;
-        // if (lightIndicatorObject != null) {
-        //     lightIndicatorObject.intensity = defaultIndicatorIntensity;
-        // }
         dialogueRunner.StartDialogue(conversationStartNode);
+
+        // CUSTOM
+        // switch (name) {
+        //     case "Birbby Sprite":
+        //         Debug.Log("1 found");
+        //         break;
+        //     case "Bronicorn Sprite":
+        //         Debug.Log("2 found");
+        //         break;
+        //     default:
+        //         Debug.Log($"Cannot find character name of {name}.");
+        //         break;
+        // }
     }
 
     private void EndConversation() {
         if (isCurrentConversation) {
-            // if (lightIndicatorObject != null) {
-            //     lightIndicatorObject.intensity = 0;
-            // }
             isCurrentConversation = false;
             Debug.Log($"Started conversation with {name}.");
         }
