@@ -20,34 +20,33 @@ tags:
 <<set $allQuestionsAsked to false>>
 <<set $wheelPlaced to false>>
 
-<<birbby_talk>>
-Birbby: Ugh. Where are we now?
-<<birbby_shutup>>
-<<wait 2.0>>
-<<birbby_talk>>
-Birbby: Wait. Look up there.
-//<<pan to star in box>>
-Birbby: This whole thing just keeps getting better.
-Birbby: I have no idea how we're going to get that down.
-Birbby: I want to go home. I really do.
-Birbby: But I...
-<<birbby_shutup>>
-<<wait 2.0>>
-<<birbby_talk>>
-Birbby: Err. WE have to finish delivering this star.
-<<birbby_shutup>>
-<<wait 1.0>>
-<<birbby_talk>>
-Birbby: Let's look around and see if we can find anything at all to help us.
-<<birbby_shutup>>
+Birbby: Uncomment this section later.
+
+// <<birbby_talk>>
+// Birbby: Ugh. Where are we now?
+// <<birbby_shutup>>
+// <<wait 2.0>>
+// <<birbby_talk>>
+// Birbby: Wait. Look up there.
+// //<<pan to star in box>>
+// Birbby: This whole thing just keeps getting better.
+// Birbby: I have no idea how we're going to get that down.
+// Birbby: I want to go home. I really do.
+// Birbby: But I...
+// <<birbby_shutup>>
+// <<wait 2.0>>
+// <<birbby_talk>>
+// Birbby: Err. WE have to finish delivering this star.
+// <<birbby_shutup>>
+// <<wait 1.0>>
+// <<birbby_talk>>
+// Birbby: Let's look around and see if we can find anything at all to help us.
+// <<birbby_shutup>>
 ===
 
 title: BusinessIntro
 ---
 <<if $firstConvo is false>>
-    //Bronicorn: Rect Vol is {get_piece("answer")}.
-    //Bronicorn: Cylinder Vol is {get_piece2("answer")}.
-
     <<bro_talk>>
     Bronicorn: Good morning.
     <<bro_shutup>>

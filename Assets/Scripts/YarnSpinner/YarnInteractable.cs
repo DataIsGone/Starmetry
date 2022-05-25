@@ -36,19 +36,6 @@ public class YarnInteractable : MonoBehaviour {
         Debug.Log($"Started conversation with {name}.");
         isCurrentConversation = true;
         dialogueRunner.StartDialogue(conversationStartNode);
-
-        // CUSTOM
-        // switch (name) {
-        //     case "Birbby Sprite":
-        //         Debug.Log("1 found");
-        //         break;
-        //     case "Bronicorn Sprite":
-        //         Debug.Log("2 found");
-        //         break;
-        //     default:
-        //         Debug.Log($"Cannot find character name of {name}.");
-        //         break;
-        // }
     }
 
     private void EndConversation() {

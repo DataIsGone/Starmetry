@@ -4,19 +4,19 @@ Birbby: Did you need something?
 
 <<ref_answering>>
 <<if goals() == true>>
-    //<<jump PlayerGoals>>
-
-    // get scene name
     <<if scene_name() == "Level3">>
         <<jump L3Goals>>
     <<endif>>
 <<elseif ref() == true>>
+    <<birbby_talk>>
     Birbby: Close it yourself when you're done.
+    <<birbby_shutup>>
 <<elseif goals() == true>>
     <<jump L3Goals>>
 <<elseif close() == true>>
+    <<birbby_talk>>
     Birbby: Changed your mind?
 <<endif>>
-
 Birbby: Talk to me if you need me again.
+<<birbby_shutup>>
 ===
