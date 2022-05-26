@@ -1,5 +1,5 @@
 {
-    "topicID": 2,
+    "topicID": 3,
     "topicName": "Rays",
-    "topicText": "Describing rays and how they work"
+    "topicText": "A ray is a mix of a line and a line segment: it has one endpoint but extends infinitely in the other direction.\n<sprite=2>"
 }

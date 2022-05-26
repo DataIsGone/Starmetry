@@ -1,7 +1,16 @@
 {
     "items": [
         "Topics/Points.json",
+        "Topics/Lines.json",
         "Topics/LineSegments.json",
-        "Topics/Rays.json"
+        "Topics/Rays.json",
+        "Topics/Angles.json",
+        "Topics/Planes.json",
+        "Topics/Quadrilaterals.json",
+        "Topics/Circles.json",
+        "Topics/Midpoint.json",
+        "Topics/Area.json",
+        "Topics/Circumference.json",
+        "Topics/Volume.json"
     ]
 }

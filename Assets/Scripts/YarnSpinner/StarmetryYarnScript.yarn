@@ -1,6 +1,8 @@
 ﻿title: AskMe
 ---
+<<birbby_talk>>
 Birbby: Did you need something?
+<<birbby_shutup>>
 
 <<ref_answering>>
 <<if goals() == true>>
@@ -16,7 +18,9 @@ Birbby: Did you need something?
 <<elseif close() == true>>
     <<birbby_talk>>
     Birbby: Changed your mind?
+    <<birbby_shutup>>
 <<endif>>
+<<birbby_talk>>
 Birbby: Talk to me if you need me again.
 <<birbby_shutup>>
 ===

@@ -16,7 +16,7 @@ public class StoryData : MonoBehaviour
     public static string currString;
 
     void Awake() {
-        topicsUnlocked = 3; // TODO: TEST -- CHANGE LATER
+        topicsUnlocked = 12; // TODO: TEST -- CHANGE LATER
     }
 
     void Start() {

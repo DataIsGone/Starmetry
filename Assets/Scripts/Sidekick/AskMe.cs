@@ -22,9 +22,9 @@ public class AskMe : MonoBehaviour
     private RectTransform dialogueViewRect;
     private TMPro.TextMeshProUGUI dialogueTextTMP;
 
-    private const float SM_POS_X = 115f;
+    private const float SM_POS_X = 150f;
     private const float SM_WIDTH = 110f;
-    private const float SM_MARGIN_LR = 130f;
+    private const float SM_MARGIN_LR = 30f;
 
     private const string REF_DIALOGUE_P = "ReferenceDialogueCanvas";
 
@@ -40,13 +40,16 @@ public class AskMe : MonoBehaviour
         dialogueTextTMP = dialogueText.GetComponent<TMPro.TextMeshProUGUI>();
 
         origWindowPos = dialogueView.transform.position;
-        smWindowPos = new Vector3((origWindowPos.x + (origWindowPos.x * 0.3f)), origWindowPos.y, origWindowPos.z);
+        //smWindowPos = new Vector3((origWindowPos.x + (origWindowPos.x * 0.3f)), origWindowPos.y, origWindowPos.z);
+        smWindowPos = new Vector3((origWindowPos.x + SM_POS_X), origWindowPos.y, origWindowPos.z);
 
         origTextMargin = dialogueTextTMP.margin;
         smTextMargin = new Vector4(origTextMargin.x + SM_MARGIN_LR, origTextMargin.y, origTextMargin.z - SM_MARGIN_LR, origTextMargin.w);
+        //smTextMargin = new Vector4(origTextMargin.x + (origTextMargin.x * 0.5f), origTextMargin.y, origTextMargin.z - SM_MARGIN_LR, origTextMargin.w);
 
         origSizeDelta = dialogueViewRect.sizeDelta;
-        smSizeDelta = new Vector2(origSizeDelta[0] - SM_WIDTH, origSizeDelta[1]);
+        //smSizeDelta = new Vector2(origSizeDelta[0] - SM_WIDTH, origSizeDelta[1]);
+        smSizeDelta = new Vector2(origSizeDelta[0] - (origSizeDelta[0] * 0.5f), origSizeDelta[1]);
 
         ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
         defaultLayer = LayerMask.NameToLayer("Default");
