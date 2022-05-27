@@ -9,7 +9,6 @@ public class BackToPlayer : MonoBehaviour
 
     void Awake() {
         position3 = GameObject.Find("Player");
-
         v3P3 = position3.transform.position;
     }
 

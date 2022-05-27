@@ -20,28 +20,28 @@ tags:
 <<set $allQuestionsAsked to false>>
 <<set $wheelPlaced to false>>
 
-Birbby: Uncomment this section later.
-
-// <<birbby_talk>>
-// Birbby: Ugh. Where are we now?
-// <<birbby_shutup>>
-// <<wait 2.0>>
-// <<birbby_talk>>
-// Birbby: Wait. Look up there.
-// //<<pan to star in box>>
-// Birbby: This whole thing just keeps getting better.
-// Birbby: I have no idea how we're going to get that down.
-// Birbby: I want to go home. I really do.
-// Birbby: But I...
-// <<birbby_shutup>>
-// <<wait 2.0>>
-// <<birbby_talk>>
-// Birbby: Err. WE have to finish delivering this star.
-// <<birbby_shutup>>
-// <<wait 1.0>>
-// <<birbby_talk>>
-// Birbby: Let's look around and see if we can find anything at all to help us.
-// <<birbby_shutup>>
+<<birbby_talk>>
+Birbby: Ugh. Where are we now?
+<<birbby_shutup>>
+<<wait 2.0>>
+<<birbby_talk>>
+Birbby: Wait. Look up there.
+<<birbby_shutup>>
+<<l3_beginning>>
+<<birbby_talk>>
+Birbby: This whole thing just keeps getting better.
+Birbby: I have no idea how we're going to get that down.
+Birbby: I want to go home. I really do.
+Birbby: But I...
+<<birbby_shutup>>
+<<wait 2.0>>
+<<birbby_talk>>
+Birbby: Err. WE have to finish delivering this star.
+<<birbby_shutup>>
+<<wait 1.0>>
+<<birbby_talk>>
+Birbby: Let's look around and see if we can find anything at all to help us.
+<<birbby_shutup>>
 ===
 
 title: BusinessIntro
@@ -136,6 +136,7 @@ title: BusinessIntro
     <<birbby_talk>>
     Birbby: Alright, will do.
     <<birbby_shutup>>
+    // <<activate_collectables>>
 
     <<set $firstConvo to true>>
     <<set $talkedToUnicorn to true>>

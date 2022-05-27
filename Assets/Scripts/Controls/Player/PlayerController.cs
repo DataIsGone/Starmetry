@@ -19,6 +19,7 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private GameObject env;
     public SpriteRenderer playerSpriteRenderer;
     public SpriteRenderer sidekickSpriteRenderer;
+    public Animator flipAnim;
 
     void Awake() {
         refUI.SetActive(false);
@@ -72,6 +73,7 @@ public class PlayerController: MonoBehaviour
         if (ray.direction.x > 0) {
             playerSpriteRenderer.flipX = true;
             sidekickSpriteRenderer.flipX = true;
+            //flipAnim.SetTrigger("Flip");
         }
         else {
             playerSpriteRenderer.flipX = false;

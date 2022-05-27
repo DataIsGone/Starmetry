@@ -8,8 +8,11 @@ public class WheelSpin : MonoBehaviour
     static private GameObject position1;
     static private Vector3 v3P1;
     static public bool cutscene1;
+    static private GameObject splash;
 
     void Awake() {
+        splash = GameObject.Find("Water Particle System");
+
         position1 = GameObject.Find("CamPosWheel");
         wheelAnimator = GameObject.Find("WheelCombo").GetComponent<Animator>();
 
@@ -19,6 +22,7 @@ public class WheelSpin : MonoBehaviour
 
     void Start() {
         RotateWheel();
+        splash.SetActive(false);
     }
 
     void Update()
@@ -29,5 +33,6 @@ public class WheelSpin : MonoBehaviour
 
     static public void RotateWheel() {
         wheelAnimator.Play("wheel_rotate");
+        splash.SetActive(true);
     }
 }

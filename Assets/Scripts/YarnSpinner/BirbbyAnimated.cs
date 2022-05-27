@@ -17,6 +17,7 @@ public class BirbbyAnimated : CharacterTalk
     [YarnCommand("birbby_talk")]
     public static void BirbbyTalk() {
         FormatDefaultWindow();
+        FormatDefaultContinue();
         spriteAnimator.SetBool("talking", true);
     }
 
@@ -31,5 +32,11 @@ public class BirbbyAnimated : CharacterTalk
         GetTMP().color = Color.white;
         GetTMP().font = GetFont();
         GetTMP().fontSize = 96;
+    }
+
+    private static void FormatDefaultContinue() {
+        GetContImage().sprite = GetContSprite();
+        GetContTMP().font = GetFont();
+        GetContTMP().fontSize = 80;
     }
 }

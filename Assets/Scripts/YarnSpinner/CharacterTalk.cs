@@ -13,20 +13,34 @@ public class CharacterTalk : MonoBehaviour
     static protected TMPro.TextMeshProUGUI dialogueText;
     static protected Sprite defaultWindow;
     static protected TMPro.TMP_FontAsset defaultFont;
-    // static protected Color defaultColor;
+    static protected GameObject continueButton;
+    static protected Image continueButtonBG;
+    static protected Sprite continueButtonSprite;
+    static protected TMPro.TextMeshProUGUI continueText;
 
     void Awake() {
         dialogue = GameObject.Find("Main Dialogue Bubble");
         dialogueBGGO = dialogue.transform.GetChild(0).gameObject;
         dialogueBG = dialogueBGGO.GetComponent<Image>();
+        continueButton = GameObject.Find("Dialogue Continue Button");
+        continueButtonBG = continueButton.GetComponent<Image>();
+        continueButtonSprite = continueButtonBG.sprite;
+        continueText = continueButton.transform.GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
         dialogueText = dialogueBGGO.transform.GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
         defaultWindow = dialogueBG.sprite;
         defaultFont = Resources.Load<TMPro.TMP_FontAsset>("Fonts/Bitty SDF");
-        // defaultColor = Color(1f, 1f, 1f, 0.87f);
     }
 
     public static Image GetImage() {
         return dialogueBG;
+    }
+
+    public static Image GetContImage() {
+        return continueButtonBG;
+    }
+
+    public static Sprite GetContSprite() {
+        return continueButtonSprite;
     }
 
     public static Sprite GetDefaultWindow() {
@@ -41,10 +55,7 @@ public class CharacterTalk : MonoBehaviour
         return defaultFont;
     }
 
-    // public static Color GetSpriteColor() {
-    //     return defaultColor;
-    // }
-
-
-    
+    public static TMPro.TextMeshProUGUI GetContTMP() {
+        return continueText;
+    }
 }

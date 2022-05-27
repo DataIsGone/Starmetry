@@ -13,6 +13,7 @@ public class StoryData : MonoBehaviour
     private const string SCENE_2 = "Level2";
     private const string SCENE_3 = "Level3";
 
+    // private static CollectableSystem collectables;
     public static string currString;
 
     void Awake() {
