@@ -12,6 +12,7 @@ public class WheelSpin : MonoBehaviour
 
     void Awake() {
         splash = GameObject.Find("Water Particle System");
+        splash.SetActive(false);
 
         position1 = GameObject.Find("CamPosWheel");
         wheelAnimator = GameObject.Find("WheelCombo").GetComponent<Animator>();
@@ -22,7 +23,6 @@ public class WheelSpin : MonoBehaviour
 
     void Start() {
         RotateWheel();
-        splash.SetActive(false);
     }
 
     void Update()
