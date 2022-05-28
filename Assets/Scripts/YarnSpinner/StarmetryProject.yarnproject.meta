@@ -11,18 +11,177 @@ ScriptedImporter:
   sourceScripts:
   - {fileID: 6391573757903218779, guid: 5c92f7fa5e6674ba88e7082d7c6c36d3, type: 3}
   - {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66, type: 3}
+  - {fileID: 6391573757903218779, guid: 0a653cb179bac4cc3aae5276f1d5a500, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $firstConvo
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $irrigationComplete
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $wheelComplete
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $qIrrigation1
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $qIrrigation2
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $qIrrigation3
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $qIrrigationAll
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $firstAskIrrigation
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $qWheel1
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $qWheel2
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $qWheelAll
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $firstAskWheel
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $firstAskComplete
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $talkedToUnicorn
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $allQuestionsAsked
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
+  - name: $wheelPlaced
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Level3Script.yarn, node Intro3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 0b0848dd8b7f54b2bb43d00ad61dbe66,
+      type: 3}
   defaultLanguage: en-US
   languagesToSourceAssets: []
   useAddressableAssets: 0
   searchAllAssembliesForActions: 1
   assembliesToSearch: []
   ListOfFunctions:
-  - Name: CompareInputYarn
+  - Name: GetValue
+    ReturnType: -> Decimal
+    Parameters: []
+  - Name: GetWheelStatus
     ReturnType: -> Boolean
     Parameters: []
+  - Name: ChangeWheelStatus
+    ReturnType: -> Boolean
+    Parameters: []
+  - Name: CompareInputYarn
+    ReturnType: -> Boolean
+    Parameters:
+    - problem
   - Name: GetValueForYarn
+    ReturnType: -> Decimal
+    Parameters:
+    - item
+  - Name: GetValue2ForYarn
     ReturnType: -> Decimal
     Parameters:
     - item
@@ -34,6 +193,9 @@ ScriptedImporter:
     Parameters: []
   - Name: Nevermind
     ReturnType: -> Boolean
+    Parameters: []
+  - Name: GetSceneName
+    ReturnType: -> String
     Parameters: []
   - Name: Random
     ReturnType: -> Single

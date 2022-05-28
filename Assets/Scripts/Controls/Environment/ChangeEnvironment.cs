@@ -1,33 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChangeEnvironment : MonoBehaviour
 {
-    public static GameObject envObject;
-    public static GameObject bridgeObject;
-    public static GameObject rampObject;
+    public static GameObject navMeshObject;
 
-    const string ENV = "Land";
-    const string RAMP = "Ramp";
-    const string BRIDGE = "Bridge";
+    const string NAVMESH = "NavMeshAreas";
+    private static List<Transform> children;
 
     void Start() {
-        envObject = GameObject.Find(ENV).gameObject;
-        rampObject = GameObject.Find(RAMP).gameObject;
-        bridgeObject = GameObject.Find(BRIDGE).gameObject;
+        navMeshObject = GameObject.Find(NAVMESH);
+        Debug.Log(navMeshObject);
+        children = new List<Transform>(navMeshObject.transform.GetComponentsInChildren<Transform>());
     }
 
     public static void DisableMovement() {
-        envObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        rampObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        bridgeObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        
+        foreach (Transform child in children) {
+            child.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        }   
     }
 
     public static void EnableMovement() {
-        envObject.layer = LayerMask.NameToLayer("Default");
-        rampObject.layer = LayerMask.NameToLayer("Default");
-        bridgeObject.layer = LayerMask.NameToLayer("Default");
+        foreach (Transform child in children) {
+            child.gameObject.layer = LayerMask.NameToLayer("Default");
+        }
     }
 }
