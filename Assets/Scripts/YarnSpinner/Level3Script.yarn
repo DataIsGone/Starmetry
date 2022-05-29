@@ -136,7 +136,6 @@ title: BusinessIntro
     <<birbby_talk>>
     Birbby: Alright, will do.
     <<birbby_shutup>>
-    // <<activate_collectables>>
 
     <<set $firstConvo to true>>
     <<set $talkedToUnicorn to true>>

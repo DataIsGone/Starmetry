@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class LineController : MonoBehaviour
 {
@@ -30,5 +31,10 @@ public class LineController : MonoBehaviour
 
     public float GetWidth() {
         return lr.startWidth;
+    }
+    
+    [YarnCommand("remove_line")]
+    public void RemoveLine() {
+        gameObject.SetActive(false);
     }
 }

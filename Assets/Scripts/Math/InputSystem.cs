@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InputSystem : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class InputSystem : MonoBehaviour
 
     void Start() {
         firstOpened = true;
-        displayStrGameObject.GetComponent<TMPro.TextMeshProUGUI>().text = BLANK_ANSWER;
+        displayStrGameObject.GetComponent<TextMeshProUGUI>().text = BLANK_ANSWER;
         DisplayInput();
     }
 
@@ -29,7 +30,7 @@ public class InputSystem : MonoBehaviour
     }
 
     public void DisplayInput() {
-        displayStrGameObject.GetComponent<TMPro.TextMeshProUGUI>().text = playerInput;
+        displayStrGameObject.GetComponent<TextMeshProUGUI>().text = playerInput;
     }
 
     public string GetInput() {
@@ -49,7 +50,8 @@ public class InputSystem : MonoBehaviour
     
     public void SubmitInput() {
         if (ValidateInput()) {
-            MathAnswerSystem.CompareInput(decimal.Parse(GetInput()));
+            var problem = StoryData.GetSceneName();
+            MathAnswerSystem.CompareInput(decimal.Parse(GetInput()), ConfirmProblem());
         }
         // need feedback for invalid submission
         firstOpened = true;
@@ -57,5 +59,11 @@ public class InputSystem : MonoBehaviour
 
     private bool ValidateInput() {
         return !(playerInput == BLANK_ANSWER);
+    }
+
+    private int ConfirmProblem() {
+        var levelName = StoryData.GetSceneName();
+        var str = "Level";
+        return int.Parse(levelName.Replace(str, ""));
     }
 }

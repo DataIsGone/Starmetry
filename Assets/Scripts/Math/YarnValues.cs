@@ -6,15 +6,17 @@ using Yarn.Unity;
 public class YarnValues : MonoBehaviour
 {
     public GameObject mathManager;
-
     public static List<decimal> currProblem;
     public static List<decimal> currProblem2;
+    public static List<decimal> currProblem3;
 
     public void AssignCurrProblem(string probType) {
         switch (probType) {
             case "angle":
-                currProblem = mathManager.GetComponent<AngleProblemGenerator>().CreateCompAngleProblem();
-                currProblem2 = mathManager.GetComponent<AngleProblemGenerator>().CreateSuppAngleProblem();
+                var angleGen = mathManager.GetComponent<AngleProblemGenerator>();
+                currProblem = angleGen.CreateCompAngleProblem();
+                currProblem2 = angleGen.CreateSuppAngleProblem();
+                currProblem3 = angleGen.CreateRightAngleProblem();
                 break;
             case "area/circ":
                 currProblem = mathManager.GetComponent<RectAreaProblemGenerator>().CreateRectAreaProblem();
@@ -72,6 +74,19 @@ public class YarnValues : MonoBehaviour
                 return currProblem2[1];
             default:
                 Debug.Log("Could not find requested item at currProblem2[" + item + "]. Using 0 instead.");
+                return 0M;
+        }
+    }
+
+    [YarnFunction("get_piece3")]
+    public static decimal GetValue3ForYarn(string item) {
+        switch (item) {
+            case "answer":
+                return currProblem3[0];
+            case "angle":
+                return currProblem3[1];
+            default:
+                Debug.Log("Could not find requested item at currProblem3[" + item + "]. Using 0 instead.");
                 return 0M;
         }
     }

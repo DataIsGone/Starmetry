@@ -16,11 +16,15 @@ public class AngleProblemGenerator : MathProblem
         return CreateAngleProblem("supp");
     }
 
+    public List<decimal> CreateRightAngleProblem() {
+        return CreateAngleProblem("right");
+    }
+
     private List<decimal> CreateAngleProblem(string probType) {
         List<decimal> angleProblem = CreateProblem();
 
         GenerateAnglePieces(probType);
-        angleProblem[0] = CalculateAngle(probType);
+        angleProblem[0] = CalculateAngle(probType); // answer
         angleProblem.Add(subtractAngle);
 
         return angleProblem;
@@ -30,17 +34,23 @@ public class AngleProblemGenerator : MathProblem
         if (probType == "supp") {
             subtractAngle = Random.Range(1, 179);
         }
-        else {
+        else if (probType == "comp") {
             subtractAngle = Random.Range(1, 89); 
         }
+        else {  // right angle problem
+            subtractAngle = 90M / 2M;
+        }   
     }
 
     private decimal CalculateAngle(string probType) {
         if (probType == "supp") {
             return supp_base - subtractAngle;
         }
-        else {
+        else if (probType == "comp") {
             return comp_base - subtractAngle;
+        }
+        else {  // right angle problem
+            return 90M / 2M;
         }
     }
 }

@@ -7,24 +7,31 @@ using Yarn.Unity;
 public class StoryData : MonoBehaviour
 {
     public int topicsUnlocked;
-    //public GameObject yarnValues;
     private YarnValues problems;
     private const string SCENE_1 = "Level1";
     private const string SCENE_2 = "Level2";
     private const string SCENE_3 = "Level3";
-
-    // private static CollectableSystem collectables;
     public static string currString;
 
     void Awake() {
         topicsUnlocked = 12; // TODO: TEST -- CHANGE LATER
-    }
 
-    void Start() {
         currString = SceneManager.GetActiveScene().name;
         var yarnValues = GameObject.Find("StoryDataManager");
         problems = yarnValues.GetComponent<YarnValues>();
         GenerateLevelProblems();
+    }
+
+    public static string GetSceneConst(int level) {
+        if (level == 1) {
+            return SCENE_1;
+        }
+        else if (level == 2) {
+            return SCENE_2;
+        }
+        else {
+            return SCENE_3;
+        }
     }
 
     [YarnFunction("scene_name")]
