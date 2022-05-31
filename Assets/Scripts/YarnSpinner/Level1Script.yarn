@@ -20,16 +20,93 @@ tags:
 // <<set $allQuestionsAsked to false>>
 // <<set $wheelPlaced to false>>
 
+<<set $answerAcute to false>>
+<<set $answerObtuse to false>>
+<<set $answerRight to false>>
+<<set $currAnswer to 0>>
+<<set $currProblem to 0>>
+
+<<set $p1Complete to false>>
+<<set $p2Complete to false>>
+<<set $p3Complete to false>>
+
 // TEST
 <<birbby_talk>>
 Birbby: starting level 1 intro
 <<birbby_shutup>>
-//<<remove_line Line2>>
-//<<rotate_line RightConstellation>>
-// <<jump FirstConstellation>>
+<<jump P1>>
 ===
 
-title: FirstConstellation
+title: P1
+---
+<<set $currProblem to 1>>
+<<set $currAnswer to get_piece("answer")>>
+<<if $currAnswer < 90>>
+    <<set $answerAcute to true>>
+<<elseif $currAnswer == 90>>
+    <<set $answerRight to true>>
+<<else>>
+    <<set $answerObtuse to true>>
+<<endif>>
+<<set $answerP1 to true>>
+<<shift_constellations Constellations 1>>
+<<star_on Star2D 1>>
+Birbby: Blah blah, complementary angle time
+Birbby: The answer is {get_piece("answer")}.
+Birbby: Click on the thing over there when you're ready to answer, okay?
+===
+
+title: P2
+---
+<<set $currProblem to 2>>
+<<set $currAnswer to get_piece2("answer")>>
+<<if $currAnswer < 90>>
+    <<set $answerAcute to true>>
+<<elseif $currAnswer == 90>>
+    <<set $answerRight to true>>
+<<else>>
+    <<set $answerObtuse to true>>
+<<endif>>
+<<set $answerP2 to true>>
+<<finish_constellation Constellations 1>>
+<<wait 1.0>>
+<<shift_constellations Constellations 2>>
+<<star_on Star2D 2>>
+Birbby: Blah blah, supplementary angle time
+Birbby: The answer is {get_piece2("answer")}.
+Birbby: Click on the thing over there when you're ready to answer, okay?
+===
+
+title: P3
+---
+<<set $currProblem to 3>>
+<<set $currAnswer to get_piece3("answer")>>
+<<if $currAnswer < 90>>
+    <<set $answerAcute to true>>
+<<elseif $currAnswer == 90>>
+    <<set $answerRight to true>>
+<<else>>
+    <<set $answerObtuse to true>>
+<<endif>>
+<<set $answerP3 to true>>
+<<finish_constellation Constellations 2>>
+<<wait 1.0>>
+<<shift_constellations Constellations 3>>
+<<star_on Star2D 3>>
+Birbby: Blah blah, complementary angle time again
+Birbby: The answer is {get_piece3("answer")}.
+Birbby: Click on the thing over there when you're ready to answer, okay?
+===
+
+title: EndL1
+---
+<<wait 1.0>>
+<<finish_constellation Constellations 3>>
+Birbby: Looks like this level is completed.
+Birbby: Activating the portal to the next area.
+===
+
+title: ConstellationQuestion
 ---
 <<birbby_talk>>
 Birbby: You ready to answer this question?
@@ -37,20 +114,111 @@ Birbby: You ready to answer this question?
 
 -> Yes
     <<math_answering>>
-    <<jump AnsweringAcute>>
+    <<if $answerP1 is true>>
+        <<jump AnsweringP1>>
+    <<elseif $answerP2 is true>>
+        <<jump AnsweringP2>>
+    <<elseif $answerP3 is true>>
+        <<jump AnsweringP3>>
+    <<else>>
+        Birbby: Hold up, something not right.
+    <<endif>>
 -> No
     <<birbby_talk>>
-    Birbby: Later then.
+    Birbby: Let me know when you're ready again.
     <<birbby_shutup>>
 ===
 
-title: AnsweringAcute
+title: AnsweringP1
 ---
 <<if compare(1) is true>>
     <<birbby_talk>>
     Birbby: That's correct.
     <<birbby_shutup>>
+    <<set $answerP1 to false>>
+    <<jump AnsweringAngleType>>
 <<else>>
     Birbby: That's... not correct. Or something is wrong.
 <<endif>>
+===
+
+title: AnsweringP2
+---
+<<if compare(2) is true>>
+    <<birbby_talk>>
+    Birbby: That's correct.
+    <<birbby_shutup>>
+    <<set $answerP2 to false>>
+    <<jump AnsweringAngleType>>
+<<else>>
+    Birbby: That's... not correct. Or something is wrong.
+<<endif>>
+===
+
+title: AnsweringP3
+---
+<<if compare(3) is true>>
+    <<birbby_talk>>
+    Birbby: That's correct.
+    <<birbby_shutup>>
+    <<set $answerP3 to false>>
+    <<jump AnsweringAngleType>>
+<<else>>
+    Birbby: That's... not correct. Or something is wrong.
+<<endif>>
+===
+
+title: AnsweringAngleType
+---
+Birbby: So what kind of angle was that?
+-> Acute
+    <<if $answerAcute is true>>
+        Birbby: Correct!
+        <<wait 1.0>>
+        <<jump DetermineProgress>>
+    <<else>>
+        Birbby: Incorrect, sorry.
+    <<endif>>
+-> Obtuse
+    <<if $answerObtuse is true>>
+        Birbby: Correct!
+        <<wait 1.0>>
+        <<jump DetermineProgress>>
+    <<else>>
+        Birbby: Incorrect, sorry.
+    <<endif>>
+-> Right
+    <<if $answerRight is true>>
+        Birbby: Correct!
+        <<jump DetermineProgress>>
+        <<wait 1.0>>
+    <<else>>
+        Birbby: Incorrect, sorry.
+    <<endif>>
+===
+
+title: Redirect
+---
+<<if $p1Complete and $p2Complete and $p3Complete>>
+    <<jump EndL1>>
+<<endif>>
+
+<<if $currProblem == 1>>
+    <<jump P2>>
+<<elseif $currProblem == 2>>
+    <<jump P3>>
+<<endif>>
+===
+
+title: DetermineProgress
+---
+<<if $currProblem == 1>>
+    <<set $p1Complete to true>>
+<<elseif $currProblem == 2>>
+    <<set $p2Complete to true>>
+<<else>>
+    <<set $p3Complete to true>>
+<<endif>>
+
+<<jump Redirect>>
 ===

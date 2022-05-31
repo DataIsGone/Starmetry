@@ -4,42 +4,22 @@ using UnityEngine;
 
 public class DrawAngleMarker : MonoBehaviour
 {
-    public LineRenderer lineRenderer;
+    public LineRenderer angleMarker1;
+    public LineRenderer angleMarker2;
     //public LineRenderer halfCircleRenderer;
 
     void Start()
     {
-        //DrawHalfCircle(100, 1);
-        Vector3[] positions = new Vector3[3] { new Vector3(0, 0, 0), new Vector3(-1, 1, 0), new Vector3(1, 1, 0) };
-        DrawTriangle(positions);
+        Vector3[] positions = new Vector3[3] {new Vector3(-1, 0, 0), new Vector3(0, 2, 0), new Vector3(2, 1, 0)};
+        DrawMarker(positions);
     }
 
-    // void DrawHalfCircle(int steps, float radius) {
-    //     halfCircleRenderer.positionCount = steps;
-
-    //     for (int currStep = 0; currStep < steps; currStep++) {
-    //         float circumferenceProgress = (float)currStep/steps;
-    //         float currRadian = circumferenceProgress * 0.5f * Mathf.PI;
-    //         float xScaled = Mathf.Cos(currRadian);
-    //         float yScaled = Mathf.Sin(currRadian);
-    //         float x = xScaled * radius;
-    //         float y = yScaled * radius;
-
-    //         Vector3 currPos = new Vector3(x, y, 0);
-    //         halfCircleRenderer.SetPosition(currStep, currPos);
-    //     }
-    // }
-
-    //  void Start()
-    // {
-    //     Vector3[] positions = new Vector3[3] { new Vector3(0, 0, 0), new Vector3(-1, 1, 0), new Vector3(1, 1, 0) };
-    //     DrawTriangle(positions);
-    // }
-
-    void DrawTriangle(Vector3[] vertexPositions)
+    void DrawMarker(Vector3[] vertexPositions)
     {
-        
-        lineRenderer.positionCount = 3;
-        lineRenderer.SetPositions(vertexPositions);
+        angleMarker1.positionCount = 3;
+        angleMarker1.SetPositions(vertexPositions);
+
+        angleMarker2.positionCount = 3;
+        angleMarker2.SetPositions(vertexPositions);
     }
 }

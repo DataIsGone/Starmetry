@@ -104,11 +104,15 @@ public class SceneEvents : MonoBehaviour
     }
 
     static private void ResetCutscene() {
-        cutsceneFinished = false;
+        ResetCutsceneFinished();
         introL3Cutscene.enabled = false;
         introL3Cutscene2.enabled = false;
         wheelSpinCutscene.enabled = false;
         followBallCutscene.enabled = false;
         backToPlayerCutscene.enabled = false;
+    }
+
+    static public void ResetCutsceneFinished () {
+        cutsceneFinished = false;
     }
 }

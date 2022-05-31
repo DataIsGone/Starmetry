@@ -21,10 +21,10 @@ public class AngleValueLabel : MonoBehaviour
         }
         else {
             var pName = constellationParent.name;
-            if (pName == "AcuteConstellation") {
+            if (pName == "Constellation1") {
                 label.text = YarnValues.GetValueForYarn("angle").ToString();
             }
-            else if (pName == "ObtuseConstellation") {
+            else if (pName == "Constellation2") {
                 label.text = YarnValues.GetValue2ForYarn("angle").ToString();
             }
             else { // right angle
