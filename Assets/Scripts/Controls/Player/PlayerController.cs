@@ -19,7 +19,7 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private GameObject env;
     public SpriteRenderer playerSpriteRenderer;
     public SpriteRenderer sidekickSpriteRenderer;
-    public Animator flipAnim;
+    //public Animator flipAnim;
 
     void Awake() {
         refUI.SetActive(false);

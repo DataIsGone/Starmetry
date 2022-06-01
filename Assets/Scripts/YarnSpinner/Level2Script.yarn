@@ -1,0 +1,35 @@
+﻿title: Intro2
+tags:
+---
+
+// GOALS
+// <<set $talkedToUnicorn to false>>
+// <<set $allQuestionsAsked to false>>
+// <<set $wheelPlaced to false>>
+
+// TEST
+<<birbby_talk>>
+Birbby: this is the level 2 intro
+<<birbby_shutup>>
+===
+
+title: NPCAngleQuiz
+---
+NPC: You need a side of this plane?
+NPC: I'll tell you if you can answer my question correctly.
+NPC: If this plane is rectangular, what kind of angle makes up its corners?
+-> Acute
+    NPC: Incorrect
+-> Right
+    NPC: Correct!
+    NPC: The side you need is SIDE_ANSWER_LENGTH //TODO: ADD GET ANSWER FUNCTION HERE
+    Birbby: Oh good, now we can find the width of this plane.
+    Birbby: You can take the area and divide it by the length we were given just now.
+-> Obtuse
+    NPC: Incorrect
+===
+
+title: NPCMain
+---
+===
+

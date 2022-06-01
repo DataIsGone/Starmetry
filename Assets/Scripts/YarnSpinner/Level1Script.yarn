@@ -1,20 +1,6 @@
 ﻿title: Intro1
 tags:
 ---
-// <<set $firstConvo to false>>
-// <<set $irrigationComplete to false>>
-// <<set $wheelComplete to false>>
-// <<set $qIrrigation1 to false>>
-// <<set $qIrrigation2 to false>>
-// <<set $qIrrigation3 to false>>
-// <<set $qIrrigationAll to false>>
-// <<set $firstAskIrrigation to true>>
-// <<set $qWheel1 to false>>
-// <<set $qWheel2 to false>>
-// <<set $qWheelAll to false>>
-// <<set $firstAskWheel to true>>
-// <<set $firstAskComplete to true>>
-
 // GOALS
 // <<set $talkedToUnicorn to false>>
 // <<set $allQuestionsAsked to false>>
@@ -30,7 +16,11 @@ tags:
 <<set $p2Complete to false>>
 <<set $p3Complete to false>>
 
-// TEST
+// GOALS
+// <<set $talkedToUnicorn to false>>
+// <<set $allQuestionsAsked to false>>
+// <<set $wheelPlaced to false>>
+
 <<birbby_talk>>
 Birbby: starting level 1 intro
 <<birbby_shutup>>
