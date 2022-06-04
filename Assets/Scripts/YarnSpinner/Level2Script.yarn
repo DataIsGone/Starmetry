@@ -1,4 +1,4 @@
-﻿title: Intro2
+title: Intro2
 tags:
 ---
 
@@ -31,5 +31,11 @@ NPC: If this plane is rectangular, what kind of angle makes up its corners?
 
 title: NPCMain
 ---
+
 ===
 
+title: NPCMainRadius
+---
+NPCMain: Oh good, I so happen to have the radius of your star here.
+NPCMain: It's RADIUS.
+===
