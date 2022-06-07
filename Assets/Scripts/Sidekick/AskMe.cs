@@ -12,6 +12,7 @@ public class AskMe : MonoBehaviour
 
     public GameObject dialogueView;
     public GameObject dialogueText;
+    public GameObject dialogueCont;
 
     private Vector4 origTextMargin;
     private Vector4 smTextMargin;
@@ -19,12 +20,14 @@ public class AskMe : MonoBehaviour
     private Vector3 smWindowPos;
     private Vector2 smSizeDelta;
     private Vector2 origSizeDelta;
+    private Vector3 origDialogueCont;
+    private Vector3 smDialogueCont;
     private RectTransform dialogueViewRect;
     private TMPro.TextMeshProUGUI dialogueTextTMP;
 
     private const float SM_POS_X = 150f;
     private const float SM_WIDTH = 110f;
-    private const float SM_MARGIN_LR = 30f;
+    private const float SM_MARGIN_LR = 20f;
 
     private const string REF_DIALOGUE_P = "ReferenceDialogueCanvas";
 
@@ -40,16 +43,16 @@ public class AskMe : MonoBehaviour
         dialogueTextTMP = dialogueText.GetComponent<TMPro.TextMeshProUGUI>();
 
         origWindowPos = dialogueView.transform.position;
-        //smWindowPos = new Vector3((origWindowPos.x + (origWindowPos.x * 0.3f)), origWindowPos.y, origWindowPos.z);
-        smWindowPos = new Vector3((origWindowPos.x + SM_POS_X), origWindowPos.y, origWindowPos.z);
+        smWindowPos = new Vector3((origWindowPos.x + (origWindowPos.x * 0.25f)), origWindowPos.y, origWindowPos.z);
 
         origTextMargin = dialogueTextTMP.margin;
         smTextMargin = new Vector4(origTextMargin.x + SM_MARGIN_LR, origTextMargin.y, origTextMargin.z - SM_MARGIN_LR, origTextMargin.w);
-        //smTextMargin = new Vector4(origTextMargin.x + (origTextMargin.x * 0.5f), origTextMargin.y, origTextMargin.z - SM_MARGIN_LR, origTextMargin.w);
 
         origSizeDelta = dialogueViewRect.sizeDelta;
-        //smSizeDelta = new Vector2(origSizeDelta[0] - SM_WIDTH, origSizeDelta[1]);
         smSizeDelta = new Vector2(origSizeDelta[0] - (origSizeDelta[0] * 0.5f), origSizeDelta[1]);
+
+        origDialogueCont = dialogueCont.transform.position;
+        smDialogueCont = new Vector3(origDialogueCont.x + (origDialogueCont.x * 0.125f), origDialogueCont.y, origDialogueCont.z);
 
         ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
         defaultLayer = LayerMask.NameToLayer("Default");
@@ -78,12 +81,14 @@ public class AskMe : MonoBehaviour
         dialogueView.transform.position = smWindowPos;
         dialogueViewRect.sizeDelta = smSizeDelta;
         dialogueTextTMP.margin = smTextMargin;
+        dialogueCont.transform.position = smDialogueCont;
     }
 
     public void OrigDialogueSize() {
         dialogueView.transform.position = origWindowPos;
         dialogueViewRect.sizeDelta = origSizeDelta;
         dialogueTextTMP.margin = origTextMargin;
+        dialogueCont.transform.position = origDialogueCont;
     }
 
     [YarnFunction("goals")]

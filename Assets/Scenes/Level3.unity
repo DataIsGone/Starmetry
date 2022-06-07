@@ -15268,6 +15268,7 @@ MonoBehaviour:
   scroll: {fileID: 1996304580}
   dialogueView: {fileID: 1141081785}
   dialogueText: {fileID: 678177555}
+  dialogueCont: {fileID: 223499058}
 --- !u!114 &1425969337
 MonoBehaviour:
   m_ObjectHideFlags: 0
