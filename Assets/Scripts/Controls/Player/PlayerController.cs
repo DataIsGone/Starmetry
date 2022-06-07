@@ -35,6 +35,7 @@ public class PlayerController: MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hitPoint)) {
+                Debug.Log(hitPoint.collider.gameObject.tag); // TODO: REMOVE
                 switch(hitPoint.collider.gameObject.tag) {
                     case "Player":
                     case "Unclickable":
