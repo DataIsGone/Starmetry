@@ -20,28 +20,34 @@ tags:
 <<set $allQuestionsAsked to false>>
 <<set $wheelPlaced to false>>
 
-// <<birbby_talk>>
-// Birbby: Ugh. Where are we now?
-// <<birbby_shutup>>
-// <<wait 2.0>>
-// <<birbby_talk>>
-// Birbby: Wait. Look up there.
-// <<birbby_shutup>>
-// <<l3_beginning>>
-// <<birbby_talk>>
-// Birbby: This whole thing just keeps getting better.
-// Birbby: I have no idea how we're going to get that down.
-// Birbby: I want to go home. I really do.
-// Birbby: But I...
-// <<birbby_shutup>>
-// <<wait 2.0>>
-// <<birbby_talk>>
-// Birbby: Err. WE have to finish delivering this star.
-// <<birbby_shutup>>
-// <<wait 1.0>>
-// <<birbby_talk>>
-// Birbby: Let's look around and see if we can find anything at all to help us.
-// <<birbby_shutup>>
+<<birbby_talk>>
+Birbby: Ugh. Where are we now?
+<<birbby_shutup>>
+<<emo_ellipse SidekickEmotion>>
+<<wait 2.0>>
+<<emo_default SidekickEmotion>>
+<<wait 2.0>>
+<<birbby_talk>>
+Birbby: Wait. Look up there.
+<<birbby_shutup>>
+<<l3_beginning>>
+<<birbby_talk>>
+Birbby: This whole thing just keeps getting better.
+Birbby: I have no idea how we're going to get that down.
+Birbby: I want to go home. I really do.
+Birbby: But I...
+<<birbby_shutup>>
+<<emo_ellipse SidekickEmotion>>
+<<wait 2.0>>
+<<emo_default SidekickEmotion>>
+<<wait 2.0>>
+<<birbby_talk>>
+Birbby: Err. WE have to finish delivering this star.
+<<birbby_shutup>>
+<<wait 1.0>>
+<<birbby_talk>>
+Birbby: Let's look around and see if we can find anything at all to help us.
+<<birbby_shutup>>
 ===
 
 title: BusinessIntro
@@ -86,7 +92,10 @@ title: BusinessIntro
     <<bro_talk>>
     Bronicorn: Look it up. You'll understand one day.
     <<bro_shutup>>
-    <<wait 1.0>>
+    <<emo_ellipse SidekickEmotion>>
+    <<wait 2.0>>
+    <<emo_default SidekickEmotion>>
+    <<wait 2.0>>
     <<birbby_talk>>
     Birbby: Can you just help us get our star back?
     <<birbby_shutup>>
@@ -100,7 +109,10 @@ title: BusinessIntro
     <<bro_talk>>
     Bronicorn: Weak mental. Not gonna make it.
     <<bro_shutup>>
-    <<wait 1.0>>
+    <<emo_ellipse SidekickEmotion>>
+    <<wait 2.0>>
+    <<emo_default SidekickEmotion>>
+    <<wait 2.0>>
     <<bro_talk>>
     Bronicorn: Look, I'll help you get your ball down if you do me two favors.
     Bronicorn: My water wheel generator is obviously missing a wheel. Can't generate any energy without one.
@@ -184,7 +196,10 @@ title: WaterWheelQuestions
     Bronicorn: Not much. But we move fast.
     Bronicorn: The river is about {get_piece2("cynHeight")} feet wide.
     <<bro_shutup>>
-    <<wait 1.0>>
+    <<emo_ellipse SidekickEmotion>>
+    <<wait 2.0>>
+    <<emo_default SidekickEmotion>>
+    <<wait 2.0>>
     <<bro_talk>>
     Bronicorn: We'll touch base later with more river info.
     <<bro_shutup>>
@@ -257,7 +272,7 @@ title: IrrigationQuestions
 // RECT. PRISM HEIGHT
 -> How tall?
     <<bro_talk>>
-    Bronicorn: "How tall?"" I can't reach that thing.
+    Bronicorn: "How tall?" I can't reach that thing.
     Bronicorn: I did find a similar glass box lying around here somewhere. I measured it. It's {get_piece("rectHeight")} feet in height.
     Bronicorn: I tossed it out though.
     <<bro_shutup>>
