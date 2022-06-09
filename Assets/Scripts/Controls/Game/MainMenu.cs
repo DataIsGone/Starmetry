@@ -10,7 +10,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] LevelTransition fade;
 
     public void StartGame() {
-        //SceneManager.LoadScene(LEVEL);
         fade.FadeToLevel(1);
     }   
 

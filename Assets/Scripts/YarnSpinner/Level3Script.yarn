@@ -20,7 +20,7 @@ tags:
 <<set $allQuestionsAsked to false>>
 <<set $wheelPlaced to false>>
 
-<<wait 2.0>>
+<<wait 1.0>>
 <<birbby_talk>>
 Birbby: Ugh. Where are we now?
 <<birbby_shutup>>
@@ -49,6 +49,9 @@ Birbby: Err. WE have to finish delivering this star.
 <<birbby_talk>>
 Birbby: Let's look around and see if we can find anything at all to help us.
 <<birbby_shutup>>
+<<start_signal StartSignal>>
+<<wait 3.0>>
+<<end_signal StartSignal>>
 ===
 
 title: BusinessIntro
