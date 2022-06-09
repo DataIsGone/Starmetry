@@ -20,6 +20,7 @@ tags:
 <<set $allQuestionsAsked to false>>
 <<set $wheelPlaced to false>>
 
+<<wait 2.0>>
 <<birbby_talk>>
 Birbby: Ugh. Where are we now?
 <<birbby_shutup>>
@@ -412,11 +413,12 @@ title: CompletedLevel3
 <<endif>>
 
 <<birbby_talk>>
-Birbby: Finally! After it!
-Birbby: Later NERD.
+Birbby: Oh thank stars it's finally on the ground.
+Birbby: We're done here nerd. See you next time.
 <<birbby_shutup>>
+<<wait 1.0>>
+<<fade_out LevelChange 0>>
 
-// player and Birbby move off screen
 ===
 
 title: L3Goals

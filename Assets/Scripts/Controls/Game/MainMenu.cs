@@ -7,9 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public const string LEVEL = "Level3";
     public GameObject optionsScreen;
+    [SerializeField] LevelTransition fade;
 
     public void StartGame() {
-        SceneManager.LoadScene(LEVEL);
+        //SceneManager.LoadScene(LEVEL);
+        fade.FadeToLevel(1);
     }   
 
     public void OpenOptions() {
