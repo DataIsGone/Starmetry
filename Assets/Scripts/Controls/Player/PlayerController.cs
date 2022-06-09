@@ -19,10 +19,11 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private GameObject env;
     public SpriteRenderer playerSpriteRenderer;
     public SpriteRenderer sidekickSpriteRenderer;
-    //public Animator flipAnim;
+    public SpriteRenderer error;
 
     void Awake() {
         refUI.SetActive(false);
+        //error.enabled = false;
     }
 
     void Update()
@@ -38,8 +39,9 @@ public class PlayerController: MonoBehaviour
                 Debug.Log(hitPoint.collider.gameObject.tag); // TODO: REMOVE
                 switch(hitPoint.collider.gameObject.tag) {
                     case "Player":
+                        break;
                     case "Unclickable":
-                        // do nothing
+                        MoveError();
                         break;
                     case "Sidekick":
                         ToggleSidekick();
@@ -49,7 +51,6 @@ public class PlayerController: MonoBehaviour
                         StopPlayer();
                         break;
                     case "NPC":
-                        // do nothing for now?
                         StopPlayer();
                         break;
                     case "Collectable":
@@ -74,7 +75,6 @@ public class PlayerController: MonoBehaviour
         if (ray.direction.x > 0) {
             playerSpriteRenderer.flipX = true;
             sidekickSpriteRenderer.flipX = true;
-            //flipAnim.SetTrigger("Flip");
         }
         else {
             playerSpriteRenderer.flipX = false;
@@ -116,5 +116,12 @@ public class PlayerController: MonoBehaviour
         } else {
             sidekick.OrigDialogueSize();
         }
+    }
+
+    private void MoveError() {
+        // error.SetActive(true);
+        // error.SetActive(false);
+        error.enabled = true;
+        error.enabled = false;
     }
 }

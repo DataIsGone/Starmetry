@@ -8,11 +8,9 @@ public class TriggerCollectable : MonoBehaviour
     private Outline outline;
 
     void Awake() {
-        //collectable = gameObject.GetComponent<Collectable>();
         collectable = GetComponent<Collectable>();
         collectable.enabled = false;
 
-        //outline = gameObject.GetComponent<Outline>();
         outline = GetComponent<Outline>();
         outline.enabled = false;
     }
